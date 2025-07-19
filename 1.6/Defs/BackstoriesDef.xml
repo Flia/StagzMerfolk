@@ -16,7 +16,7 @@
       <Social>-2</Social>
     </skillGains>
     <workDisables>
-      <li></li>
+      <li>None</li>
     </workDisables>
     <disallowedTraits>
     </disallowedTraits>
@@ -40,6 +40,7 @@
       <Cooking>-2</Cooking>
     </skillGains>
     <workDisables>
+      <li>None</li>
     </workDisables>
     <disallowedTraits>
     </disallowedTraits>
@@ -62,6 +63,7 @@
       <Crafting>1</Crafting>
     </skillGains>
     <workDisables>
+      <li>None</li>
     </workDisables>
     <disallowedTraits>
     </disallowedTraits>
@@ -83,7 +85,7 @@
       <Social>3</Social>
     </skillGains>
     <workDisables>
-      <li></li>
+      <li>None</li>
     </workDisables>
     <disallowedTraits>
       <Wimp />
@@ -126,6 +128,7 @@
       <Crafting>2</Crafting>
     </skillGains>
     <workDisables>
+      <li>None</li>
     </workDisables>
     <disallowedTraits>
     </disallowedTraits>
@@ -148,7 +151,7 @@
       <Animals>4</Animals>
     </skillGains>
     <workDisables>
-      <li></li>
+      <li>None</li>
     </workDisables>
     <forcedTraits>
       <NaturalMood>-1</NaturalMood>
@@ -168,6 +171,7 @@
       <Melee>1</Melee>
     </skillGains>
     <workDisables>
+      <li>None</li>
     </workDisables>
     <disallowedTraits>
       <Undergrounder />
@@ -193,6 +197,7 @@
       <Animals>-2</Animals>
     </skillGains>
     <workDisables>
+      <li>None</li>
     </workDisables>
     <disallowedTraits>
     </disallowedTraits>
@@ -214,6 +219,7 @@
       <Intellectual>1</Intellectual>
     </skillGains>
     <workDisables>
+      <li>None</li>
     </workDisables>
   </BackstoryDef>
   
@@ -231,7 +237,7 @@
       <Mining>1</Mining>
     </skillGains>
     <workDisables>
-      <li></li>
+      <li>None</li>
     </workDisables>
     <disallowedTraits>
     </disallowedTraits>
@@ -256,7 +262,7 @@
       <Social>3</Social>
     </skillGains>
     <workDisables>
-      <li></li>
+      <li>None</li>
     </workDisables>
   </BackstoryDef>
   

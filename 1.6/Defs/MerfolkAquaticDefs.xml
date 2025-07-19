@@ -9,7 +9,9 @@
         </customEffectDescriptions>
         <iconPath>UI/Icons/Genes/Gene_Aquatic</iconPath>
         <displayCategory>Miscellaneous</displayCategory>
-        <enablesNeeds><li>Stagz_NeedAquatic</li></enablesNeeds>
+        <enablesNeeds>
+            <li>Stagz_NeedAquatic</li>
+        </enablesNeeds>
         <biostatMet>4</biostatMet>
         <biostatCpx>2</biostatCpx>
         <minAgeActive>3</minAgeActive>
