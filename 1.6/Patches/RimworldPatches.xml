@@ -77,4 +77,12 @@
             </li>
         </value>
     </Operation>
+    <Operation Class="PatchOperationAddModExtension" MayRequire="VanillaExpanded.VPsycastsE">
+        <xpath>/Defs/MeditationFocusDef[defName="Stagz_Water"]</xpath>
+        <value>
+            <li Class="VanillaPsycastsExpanded.MeditationFocusExtension">
+                <icon>UI/Icons/Psyfocus/PsyfocusWater</icon>
+            </li>
+        </value>
+    </Operation>
 </Patch>
