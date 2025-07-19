@@ -13,7 +13,7 @@ public class ChoiceLetter_AcceptAriel : ChoiceLetter_AcceptCharmedJoiner
             {
                 GenExplosion.DoExplosion(asker.Position, asker.Map, 4.9f, DamageDefOf.Extinguish, null, -1, -1f, 
                     SoundDefOf.Explosion_FirefoamPopper, null, null, null, ThingDefOf.Filth_FireFoam, 1f, 1, null, 
-                    0f, 0,true);
+                    0f, 0, true);
                 
                 asker.Kill(null);
                 CompRottable comp;
