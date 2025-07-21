@@ -23,13 +23,6 @@
                 <postFactor>0.9</postFactor>
             </li>
         </capMods>
-        <conditionalStatAffecters>
-            <li Class="StagzMerfolk.ConditionalStatEffector_Water">
-                <statOffsets>
-                    <MoveSpeed>0.1</MoveSpeed>
-                </statOffsets>
-            </li>
-        </conditionalStatAffecters>
         <exclusionTags>
             <li>Hands</li>
         </exclusionTags>
@@ -200,13 +193,6 @@
         </renderNodeProperties>
         <endogeneCategory>Ears</endogeneCategory>
         <displayCategory>Cosmetic</displayCategory>
-        <conditionalStatAffecters>
-            <li Class="StagzMerfolk.ConditionalStatEffector_Water">
-                <statOffsets>
-                    <MoveSpeed>0.1</MoveSpeed>
-                </statOffsets>
-            </li>
-        </conditionalStatAffecters>
         <exclusionTags>
             <li>Ears</li>
         </exclusionTags>
@@ -235,16 +221,8 @@
         <iconPath>UI/Icons/Genes/Gene_FishFin</iconPath>
         <!-- <iconColor>(0.75, 0.75, 0.75)</iconColor> -->
         <displayOrderInCategory>1000</displayOrderInCategory>
-        <conditionalStatAffecters>
-            <li Class="StagzMerfolk.ConditionalStatEffector_Water">
-                <statOffsets>
-                    <MoveSpeed>0.1</MoveSpeed>
-                </statOffsets>
-            </li>
-        </conditionalStatAffecters>
-        <biostatCpx>1</biostatCpx>
+        <biostatCpx>0</biostatCpx>
         <biostatMet>0</biostatMet>
-        
         <renderNodeProperties>
             <li>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishfin</nodeClass>
