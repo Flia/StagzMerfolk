@@ -13,7 +13,7 @@ public static class Verb_MeleeAttack_GetDodgeChance_Patch
     {
         if (target == null) return;
         Pawn pawn = target.Thing as Pawn;
-        if (pawn != null && pawn.RaceProps.Humanlike && pawn.genes.HasGene(StagzDefOf.Stagz_KeenReflexes) && __result > 0)
+        if (pawn != null && pawn.RaceProps.Humanlike && pawn.genes.HasActiveGene(StagzDefOf.Stagz_KeenReflexes) && __result > 0)
         {
             __result = Math.Min(__result + 0.2f, 0.9f);
         }
@@ -25,7 +25,7 @@ public static class Pawn_SpecialDisplayStats_Patch
 {
     private static IEnumerable<StatDrawEntry> Postfix(IEnumerable<StatDrawEntry> __result, Pawn __instance)
     {
-        if (__instance != null && __instance.RaceProps.Humanlike && __instance.genes.HasGene(StagzDefOf.Stagz_KeenReflexes))
+        if (__instance != null && __instance.RaceProps.Humanlike && __instance.genes.HasActiveGene(StagzDefOf.Stagz_KeenReflexes))
         {
             var keenReflexesStatDrawEntry = new StatDrawEntry(StatCategoryDefOf.PawnCombat, "StagzMerfolk_KeenReflexes".Translate(),"+20%", "added dodge, can exceed the usual 50% limit", 410000);
             return __result.Concat(keenReflexesStatDrawEntry);
@@ -44,7 +44,7 @@ public static class ShotReport_AimOnTargetChance_IgnoringPosture_Patch
         if (___target == null) return;
 
         var pawn = ___target.Thing as Pawn;
-        if (pawn != null && pawn.RaceProps.Humanlike && pawn.genes.HasGene(StagzDefOf.Stagz_KeenReflexes) && __result < 1f)
+        if (pawn != null && pawn.RaceProps.Humanlike && pawn.genes.HasActiveGene(StagzDefOf.Stagz_KeenReflexes) && __result < 1f)
         {
             __result = Math.Max(__result - ((pawn.GetStatValue(StatDefOf.MeleeDodgeChance, true, -1) + 0.2f) * meleeToRangeCoefficient), 0.02f);
         }
@@ -59,7 +59,7 @@ public static class ShotReport_GetTextReadout_Patch
         if (___target == null) return;
                 
         var pawn = ___target.Thing as Pawn;
-        if (pawn != null && pawn.RaceProps.Humanlike && pawn.genes.HasGene(StagzDefOf.Stagz_KeenReflexes))
+        if (pawn != null && pawn.RaceProps.Humanlike && pawn.genes.HasActiveGene(StagzDefOf.Stagz_KeenReflexes))
         {
             __result += "   " + "StagzMerfolk_KeenReflexes".Translate() + " " + ((pawn.GetStatValue(StatDefOf.MeleeDodgeChance, true, -1) + 0.2f) * 0.75f).ToStringPercent() + "\n";
         }
