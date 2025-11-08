@@ -1,6 +1,5 @@
-﻿/*using System;
+﻿using System;
 using System.Reflection;
-using DubsBadHygiene;
 using HarmonyLib;
 using Verse;
 
@@ -29,4 +28,4 @@ public class DbhHygieneCleanPatches
             ___pawn.needs.TryGetNeed(StagzDefOf.Stagz_NeedAquatic).CurLevel = Math.Min(___pawn.needs.TryGetNeed(StagzDefOf.Stagz_NeedAquatic).CurLevel + val, 1f);
         }
     }
-}*/
+}
