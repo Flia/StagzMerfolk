@@ -87,6 +87,7 @@
         <displayOrderInCategory>500</displayOrderInCategory>
         <customEffectDescriptions>
             <li>Enables the water meditation focus.</li>
+            <li>In rain, psychic abilities are considerably improved.</li>
         </customEffectDescriptions>
         <conditionalStatAffecters>
             <li Class="StagzMerfolk.ConditionalStatEffector_Rain">
@@ -163,7 +164,7 @@
         <label>keen reflexes</label>
         <description>Carriers of this gene have extremely fast reflexes. They can dodge most incoming hits even from a distance.</description>
         <customEffectDescriptions>
-            <li>Adds an addtional +20% to melee dodge chance, ignoring the usual 50% melee dodge chance cap.</li>
+            <li>Adds an extra 20% to melee dodge chance, ignoring the usual 50% melee dodge chance cap.</li>
             <li>75% of melee dodge chance is applied to ranged dodge chance.</li>
         </customEffectDescriptions>
         <iconPath>UI/Icons/Genes/Gene_KeenReflex</iconPath>
