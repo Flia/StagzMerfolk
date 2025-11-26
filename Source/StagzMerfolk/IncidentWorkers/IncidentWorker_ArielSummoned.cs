@@ -12,7 +12,7 @@ public class IncidentWorker_ArielSummoned : IncidentWorker
 
     private Pawn GeneratePawn(PawnKindDef pawnKindDef)
     {
-        return PawnGenerator.GeneratePawn(pawnKindDef, Faction.OfAncients);
+        return PawnGenerator.GeneratePawn(pawnKindDef);
     }
 
     private void SpawnJoiner(Map map, Pawn pawn, IntVec3 center)
