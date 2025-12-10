@@ -78,6 +78,11 @@
 					<texPath>Things/Pawn/Animal/DryadSquid/Dessicated_DryadSquid</texPath>
 					<drawSize>1</drawSize>
 				</dessicatedBodyGraphicData>
+				<swimmingGraphicData>
+					<texPath>Things/Pawn/Animal/DryadSquid/Swimming_DryadSquid</texPath>
+					<graphicClass>Graphic_Multi</graphicClass>
+					<drawSize>1</drawSize>
+				</swimmingGraphicData>
 			</li>
 		</lifeStages>
 	</PawnKindDef>
