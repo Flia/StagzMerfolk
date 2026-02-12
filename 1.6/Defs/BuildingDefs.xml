@@ -3,7 +3,8 @@
     <ThingDef Name="Stagz_WaterCandle" ParentName="BuildingBase">
         <defName>Stagz_WaterCandle</defName>
         <label>floating lantern</label>
-        <description>A specially-treated wooden lantern that produces a dim light over a medium area while floating on water. Can be automatically refuelled with wood. Produce a tiny amount of heat.</description>
+        <description>A lightweight lantern designed to float on water, somewhat less effective at lighting an area than a standing torch. It is fuelled with wood and produces a small amount of heat.</description>
+        <!-- "Water-focused psycasters can meditate on the scattering lights to restore their psyfocus." Although I'd like to highlight this bit, the lantern will appear even without Royalty so I should use more generic language -->
         <category>Building</category>
         <graphicData>
             <texPath>Things/Building/FloatingLamp/Lamp</texPath>
