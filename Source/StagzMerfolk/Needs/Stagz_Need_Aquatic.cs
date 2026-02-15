@@ -8,18 +8,23 @@ namespace StagzMerfolk;
 
 public class Stagz_Need_Aquatic : Need
 {
+    private const float BaseGainRatePerTick = 0.0075f;
+    private const float BaseFallRatePerTick = 0.0003f;
+
+    //Normally this is implemented through a stat but idk if we need to go that far yet
+    private float FallFactor =>
+        pawn.Map != null && pawn.Map.gameConditionManager.ConditionIsActive(GameConditionDefOf.HeatWave) ? 2 : 1;
+    
+    public bool Dehydrating => CurLevelPercentage <= 0.0;
+    private bool GainingHydration =>
+        pawn.OnWater() ||
+        pawn.InRain() ||
+        ModsConfig.IsActive("balistafreak.StandaloneHotSpring") && pawn.health.hediffSet.HasHediff(DefDatabase<HediffDef>.GetNamed("IntheStandaloneHotSpring"));
+    
     public Stagz_Need_Aquatic(Pawn pawn) : base(pawn)
     {
-        this.threshPercents = new List<float>
-        {
-            0.1f
-        };
+        threshPercents = [0.1f];
     }
-
-    private const float FallRate = 0.0003f;
-    private float tempFallRate;
-    public bool Dehydrating => CurLevelPercentage <= 0.0;
-
     private bool IsCaravanOnWaterFeatures(Pawn pawn)
     {
         if (!pawn.IsCaravanMember())
@@ -40,36 +45,24 @@ public class Stagz_Need_Aquatic : Need
     }
     public override void NeedInterval()
     {
-        if (pawn == null) return;
+        //if (pawn == null) return;
         if (IsFrozen)
         {
             return;
         }
-        if (pawn.IsWet())
+        if (GainingHydration)
         {
-            this.CurLevel += 0.0075f;
+            CurLevel += BaseGainRatePerTick;
         }
         else
         {
-            tempFallRate = FallRate;
-            if (pawn.Map != null && pawn.Map.gameConditionManager.ConditionIsActive(GameConditionDefOf.HeatWave))
-            {
-                tempFallRate *= 2;
-            }
-
-            this.CurLevel -= tempFallRate;
+            CurLevel -= BaseFallRatePerTick * FallFactor;
         }
         if (Dehydrating)
-        {
-            HealthUtility.AdjustSeverity(this.pawn, StagzDefOf.Stagz_Dehydration, 0.0075f);
-        }
+            HealthUtility.AdjustSeverity(pawn, StagzDefOf.Stagz_Dehydration, 0.0075f);
         else
         {
-            var dehydrationHediff = pawn.health.hediffSet.GetFirstHediffOfDef(StagzDefOf.Stagz_Dehydration);
-            if (dehydrationHediff != null)
-            {
-                dehydrationHediff.Severity -= 0.15f;
-            }
+            HealthUtility.AdjustSeverity(pawn, StagzDefOf.Stagz_Dehydration, -0.15f);
         }
     }
 
@@ -94,13 +87,7 @@ public class Stagz_Need_Aquatic : Need
             {
                 return 0;
             }
-
-            if (pawn.IsWet())
-            {
-                return 1;
-            }
-
-            return -1;
+            return GainingHydration ? 1 : -1;
         }
     }
     public override void OnNeedRemoved()
