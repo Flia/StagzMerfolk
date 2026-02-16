@@ -18,6 +18,8 @@ public class Stagz_Need_Aquatic : Need
 
     private const float FallRate = 0.0003f;
     private float tempFallRate;
+    public bool Dehydrating => CurLevelPercentage <= 0.0;
+
     private bool IsCaravanOnWaterFeatures(Pawn pawn)
     {
         if (!pawn.IsCaravanMember())
@@ -57,7 +59,7 @@ public class Stagz_Need_Aquatic : Need
 
             this.CurLevel -= tempFallRate;
         }
-        if (this.CurLevel < 0.1f)
+        if (Dehydrating)
         {
             HealthUtility.AdjustSeverity(this.pawn, StagzDefOf.Stagz_Dehydration, 0.0075f);
         }
@@ -100,6 +102,13 @@ public class Stagz_Need_Aquatic : Need
 
             return -1;
         }
+    }
+    public override void OnNeedRemoved()
+    {
+        Hediff hediff;
+        if (!pawn.health.hediffSet.TryGetHediff(StagzDefOf.Stagz_Dehydration, out hediff))
+            return;
+        pawn.health.RemoveHediff(hediff);
     }
 
     public void Hydrate(float val)
