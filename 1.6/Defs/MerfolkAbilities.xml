@@ -6,6 +6,7 @@
         <description>The caster releases an enchanting song centred around themselves. Enemies caught within its range will hesitate to strike the caster as they become infatuated.</description>
         <iconPath>UI/Abilities/SirenCall</iconPath>
         <targetRequired>False</targetRequired>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <cooldownTicksRange>300000</cooldownTicksRange><!-- 5 days -->
         <canUseAoeToGetTargets>false</canUseAoeToGetTargets>
         <jobDef>CastAbilityOnThingWithoutWeaponInterruptible</jobDef>
@@ -154,6 +155,8 @@
         <label>call rain</label>
         <description>Causes the weather on the local map to become foggy rain or rainy thunderstorm.\n\nThis weather effect has a lower priority and will be overridden by weather triggered by quest or event.</description>
         <iconPath>UI/Abilities/Raincalling</iconPath>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>False</targetRequired>
         <cooldownTicksRange>300000</cooldownTicksRange>
         <charges>2</charges>
@@ -190,6 +193,7 @@
         <iconPath>UI/Abilities/DeepDive</iconPath>
         <cooldownTicksRange>60</cooldownTicksRange>
         <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <targetRequired>False</targetRequired>
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
