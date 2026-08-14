@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/XenotypeDef[defName="Stagz_Merfolk_Coastal" or defName="Stagz_Merfolk_Abyssal"]/genes</xpath>
+        <value>
+            <li>HDS_AbyssalAdaptation_Total</li>
+        </value>
+    </Operation>
+</Patch>

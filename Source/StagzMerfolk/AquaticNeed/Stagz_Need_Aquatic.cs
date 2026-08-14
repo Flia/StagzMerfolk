@@ -40,7 +40,8 @@ public class Stagz_Need_Aquatic : Need
     private bool GainingHydration =>
         pawn.OnWater()
         || pawn.InRain()
-        || pawn.health.hediffSet.HasHediff(StagzDefOf.IntheStandaloneHotSpring);
+        || pawn.health.hediffSet.HasHediff(StagzDefOf.IntheStandaloneHotSpring)
+        || DeepSeaCompat.Helpers.IsSubmerged(pawn);
     
     public Stagz_Need_Aquatic(Pawn pawn) : base(pawn)
     {
