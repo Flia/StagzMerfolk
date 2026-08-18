@@ -236,6 +236,7 @@
         <description>Carriers of this gene have finned ears that are partially covered in colorful scales.</description>
         <customEffectDescriptions>
             <li>Will be colored the same as the fishtail if the fishtail gene is present.</li>
+            <li>The color can be changed using dye.</li>
         </customEffectDescriptions>
         <!-- TODO: ideally needs its own icon but making one with mask is problematic -->
         <iconPath>UI/Icons/Genes/Gene_EarFin</iconPath>
@@ -266,6 +267,7 @@
         <description>Carriers of this gene develop a pair of fins near their waist.</description>
         <customEffectDescriptions>
             <li>Will be colored the same as the fishtail if the fishtail gene is present.</li>
+            <li>The color can be changed using dye.</li>
         </customEffectDescriptions>
         <iconPath>UI/Icons/Genes/Gene_FishFin</iconPath>
         <!-- <iconColor>(0.75, 0.75, 0.75)</iconColor> -->

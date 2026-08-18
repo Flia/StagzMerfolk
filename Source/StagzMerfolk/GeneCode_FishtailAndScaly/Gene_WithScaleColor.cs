@@ -47,6 +47,19 @@ public class Gene_WithScaleColor : Gene
             pawn.Drawer.renderer.SetAllGraphicsDirty();
         }
     }
+    
+    private Color? _pendingColor;
+    public Color? PendingColor
+    {
+        get => _pendingColor;
+        set
+        {
+            foreach (var gene in pawn.genes.GenesListForReading.OfType<Gene_WithScaleColor>())
+            {
+                gene._pendingColor = value;
+            }
+        }
+    }
 
     public override void PostMake()
     {
@@ -69,6 +82,7 @@ public class Gene_WithScaleColor : Gene
     {
         base.ExposeData();
         Scribe_Values.Look(ref _chosenColor, "chosenColor");
+        Scribe_Values.Look(ref _pendingColor, "pendingColor");
     }
     
     public override IEnumerable<Gizmo> GetGizmos()

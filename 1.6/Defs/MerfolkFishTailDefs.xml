@@ -8,6 +8,7 @@
         <description>Carriers of this gene grow a fish-like tail below their waist instead of human legs.</description>
         <customEffectDescriptions>
             <li>Replaced by a random colored tail when added to a pawn</li>
+            <li>The color of the tail can be changed using dye.</li>
             <li>Replaces the pawn's legs with a fishtail.</li>
             <li>Prevents the pawn from wearing clothes that only cover leg slots.</li>
             <li>This gene is lost if the fishtail is destroyed.</li>
@@ -52,7 +53,8 @@
         <label>fishtail</label>
         <description>Carriers of this gene grow a fish-like tail below their waist instead of human legs.</description>
         <customEffectDescriptions>
-            <li>Replaces the pawn's legs with a fishtail.</li>
+            <li>Replaces the pawn's legs with a colorful fishtail.</li>
+            <li>The color can be changed using dye.</li>
             <li>Prevents the pawn from wearing clothes that only cover leg slots.</li>
             <li>This gene is lost if the fishtail is destroyed.</li>
         </customEffectDescriptions>

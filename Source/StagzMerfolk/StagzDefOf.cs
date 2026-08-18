@@ -29,6 +29,14 @@ public class StagzDefOf
     [MayRequire("balistafreak.StandaloneHotSpring")]
     public static HediffDef IntheStandaloneHotSpring;
     
+    public static JobDef Stagz_OpenDialog_ColorPickerForGenesWithScales;
+    public static JobDef Stagz_ChangeScaleColorAtComp;
+    public static JobDef Stagz_ChangeScaleColorAtDye;
+    public static ThingDef Stagz_Filth_Dye;
+    public static ThingDef Stagz_Filth_DyeSmear;
+    public static HediffDef Stagz_CoveredInDye;
+    public static EffecterDef Stagz_DyeingTail;
+    
     public static MentalStateDef Stagz_Charmed;
     public static MentalStateDef Stagz_VeryCharmed;
 
