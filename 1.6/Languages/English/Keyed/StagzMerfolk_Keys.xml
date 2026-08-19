@@ -4,14 +4,14 @@
     <StagzMerfolk_ConditionalStatEffector_WaterOrRain>in water or rain</StagzMerfolk_ConditionalStatEffector_WaterOrRain>
     <StagzMerfolk_ConditionalStatEffector_NotWater>not in water</StagzMerfolk_ConditionalStatEffector_NotWater>
     <StagzMerfolk_ConditionalStatEffector_Rain>in rain</StagzMerfolk_ConditionalStatEffector_Rain>
-    <AbilityDisabledNotOnWater>must be standing on a water tile</AbilityDisabledNotOnWater>
+    <StagzMerfolk_AbilityDisabledNotOnWater>must be standing on a water tile</StagzMerfolk_AbilityDisabledNotOnWater>
     <StagzMerfolk_CannotWearBecauseOfTail>{0} tried to wear clothing that covers legs, but could not because they have a tail</StagzMerfolk_CannotWearBecauseOfTail>
     <StagzMerfolk_RainCall>{0} has called forth a {1}. It will begin shortly...</StagzMerfolk_RainCall>
 
     <StagzMerfolk_LetterLabelCharmedJoins>Charmed {PAWN_title}: {PAWN_nameDef}</StagzMerfolk_LetterLabelCharmedJoins>
     <StagzMerfolk_LetterCharmedJoins>After being charmed, a {PAWN_title} named {PAWN_nameDef} wishes to turn a new leaf and wants to join the colony.\n\n[PAWN_pronoun] is willing to contribute, but will soon exile themselves in shame. You can choose to turn {PAWN_objective} down and send {PAWN_objective} away. However, your colonists will be disturbed at sending someone away in need.</StagzMerfolk_LetterCharmedJoins>
 
-    <Stagz_UnlockedByGene>Has gene:</Stagz_UnlockedByGene>
+    <StagzMerfolk_UnlockedByGene>Has gene:</StagzMerfolk_UnlockedByGene>
 
     <StagzMerfolk_KeenReflexes>Keen Reflexes</StagzMerfolk_KeenReflexes>
     <StagzMerfolk_KeenReflexes_Value>Melee dodge applies to ranged attacks</StagzMerfolk_KeenReflexes_Value>

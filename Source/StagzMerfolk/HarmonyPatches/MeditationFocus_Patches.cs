@@ -13,7 +13,7 @@ public class MeditationFocusDef_EnablingThingsExplanation_Patch
 
         if (__instance == StagzDefOf.Stagz_Water && pawn.genes?.HasActiveGene(StagzDefOf.Stagz_Raincaller) == true)
         {
-            __result += "\n  - " + "Stagz_UnlockedByGene".Translate() + " " + StagzDefOf.Stagz_Raincaller.LabelCap + ".";
+            __result += $" - {"StagzMerfolk_UnlockedByGene".Translate()} {StagzDefOf.Stagz_Raincaller.LabelCap}.";
         }
     }
 }
