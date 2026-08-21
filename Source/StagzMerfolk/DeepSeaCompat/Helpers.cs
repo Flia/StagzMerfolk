@@ -4,15 +4,20 @@ using Verse;
 
 namespace StagzMerfolk.DeepSeaCompat;
 
+[StaticConstructorOnStartup]
 public static class Helpers
 {
-    public static bool IsSubmerged(this Pawn pawn)
+    private static readonly bool DeepSeaActive;
+    private static readonly Func<Map, IntVec3, bool> submergedDelegate;
+    static Helpers()
     {
-        if (!ModLister.AnyModActiveNoSuffix(["horizons.deepsea"])) return false;
-        
-        Func<Map,IntVec3,bool> GetThing = (Func<Map,IntVec3,bool>)AccessTools
+        DeepSeaActive = ModLister.AnyModActiveNoSuffix(["horizons.deepsea"]);
+        if (DeepSeaActive)
+        {
+            submergedDelegate = (Func<Map, IntVec3, bool>)AccessTools
                 .Method("horizons.deepsea.Core.FloodSim.HDS_SubmergedCellUtility:IsSubmerged")
-                .CreateDelegate(typeof(Func<Map,IntVec3,bool>));
-        return GetThing(pawn.Map, pawn.Position);
+                .CreateDelegate(typeof(Func<Map, IntVec3, bool>));
+        }
     }
+    public static bool IsSubmerged(this Pawn pawn) => DeepSeaActive && submergedDelegate(pawn.Map, pawn.Position);
 }
