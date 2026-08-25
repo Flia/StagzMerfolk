@@ -3,6 +3,7 @@ using JetBrains.Annotations;
 using RimWorld;
 using Verse;
 using Verse.AI.Group;
+using Verse.Sound;
 
 namespace StagzMerfolk;
 
@@ -47,7 +48,8 @@ public class IncidentWorker_ArielSummoned : IncidentWorker
         
         //spawn pawn
         GenSpawn.Spawn(merrenJoiner, parms.spawnCenter, map);
-        StagzDefOf.Stagz_MerrenJoinerEmergeFromWater.Spawn(merrenJoiner, map);
+        StagzDefOf.Stagz_DeepDiveSubmerge.Spawn(merrenJoiner, map);
+        StagzDefOf.Stagz_DeepDiveEmergeSound.PlayOneShot(merrenJoiner);
         
         //Sets Nautian style to joiner's items if Nautian mod is present
         if (StagzDefOf.GM_Ocean != null)

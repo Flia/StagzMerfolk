@@ -43,7 +43,8 @@ public class StagzDefOf
     public static LetterDef Stagz_AcceptCharmedJoiner;
     [MayRequireRoyalty]
     public static IncidentDef Stagz_VirtuosoSummoned;
-    public static EffecterDef Stagz_MerrenJoinerEmergeFromWater;
+    public static EffecterDef Stagz_DeepDiveSubmerge;
+    public static SoundDef Stagz_DeepDiveEmergeSound;
     [MayRequire("GM.Nautian.Style")]
     public static StyleCategoryDef GM_Ocean;
 

@@ -223,8 +223,10 @@
         <isBad>false</isBad>
         <comps>
             <li Class="StagzMerfolk.HediffCompProperties_DeepDiveSFX">
-                <addEffecter>Stagz_DeepDiveSubmerge</addEffecter>
-                <removeEffecter>Stagz_DeepDiveEmerge</removeEffecter>
+                <effecterDefForAdding>Stagz_DeepDiveSubmerge</effecterDefForAdding>
+                <soundDefForAdding>Stagz_DeepDiveSubmergeSound</soundDefForAdding>
+                <effecterDefForRemoving>Stagz_DeepDiveEmerge</effecterDefForRemoving>
+                <soundDefForRemoving>Stagz_DeepDiveEmergeSound</soundDefForRemoving>
             </li>
             <li Class="HediffCompProperties_Invisibility">
                 <visibleToPlayer>true</visibleToPlayer>

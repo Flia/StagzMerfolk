@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    
+    <SoundDef>
+        <defName>Stagz_DeepDiveSubmergeSound</defName>
+        <context>MapOnly</context>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Pawn/Abilities/DeepDive/StagzMerfolk_Deepdive</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>20~40</volumeRange>
+                <pitchRange>0.85~1.15</pitchRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+    
+    <SoundDef>
+        <defName>Stagz_DeepDiveEmergeSound</defName>
+        <context>MapOnly</context>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Pawn/Abilities/DeepDive/StagzMerfolk_Deepdive2</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>20~40</volumeRange>
+                <pitchRange>0.85~1.15</pitchRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+</Defs>
