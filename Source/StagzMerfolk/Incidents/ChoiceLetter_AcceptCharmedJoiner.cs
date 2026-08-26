@@ -8,10 +8,8 @@ public class ChoiceLetter_AcceptCharmedJoiner : ChoiceLetter
 {
     public Pawn asker;
     
-    //TODO: don't think I need this bool but I need to rework Charm first
-    public bool requiresAliveAsker;
     public override bool CanDismissWithRightClick => false;
-    public override bool CanShowInLetterStack => base.CanShowInLetterStack && (!requiresAliveAsker || asker is { Dead: false });
+    public override bool CanShowInLetterStack => base.CanShowInLetterStack && asker is { Dead: false };
 
     public override IEnumerable<DiaOption> Choices
     {
@@ -38,11 +36,7 @@ public class ChoiceLetter_AcceptCharmedJoiner : ChoiceLetter
     {
         action = delegate
         {
-            if (asker.Spawned)
-            {
-                asker.mindState.mentalStateHandler.Reset();
-            }
-            else
+            if (!asker.Spawned)
             {
                 Map map = Find.AnyPlayerHomeMap;
                 CellFinder.TryFindRandomEdgeCellWith(c=> map.reachability.CanReachColony(c) && !c.Fogged(map), map, CellFinder.EdgeRoadChance_Neutral, out var cell);
@@ -59,6 +53,7 @@ public class ChoiceLetter_AcceptCharmedJoiner : ChoiceLetter
         {
             action = delegate
             {
+                //TODO: need a custom job probably
                 asker.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.PanicFlee);
                 Find.LetterStack.RemoveLetter(this);
             },
@@ -69,6 +64,5 @@ public class ChoiceLetter_AcceptCharmedJoiner : ChoiceLetter
     {
         base.ExposeData();
         Scribe_References.Look(ref asker, "asker");
-        Scribe_Values.Look(ref requiresAliveAsker, "requiresAliveAsker");
     }
 }

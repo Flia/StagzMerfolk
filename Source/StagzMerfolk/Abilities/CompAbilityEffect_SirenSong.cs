@@ -1,70 +1,26 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using JetBrains.Annotations;
 using RimWorld;
 using UnityEngine;
 using Verse;
 
 namespace StagzMerfolk;
 
-public class CompAbilityEffect_SirenSong : CompAbilityEffect
+public class CompAbilityEffect_SirenSong : CompAbilityEffect_GiveHediff
 {
-    private new CompProperties_AbilitySirenSong Props
-    {
-        get
-        {
-            return (CompProperties_AbilitySirenSong)this.props;
-        }
-    }
+    private new CompProperties_AbilitySirenSong Props => (CompProperties_AbilitySirenSong)props;
 
-    public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
+    protected override bool TryResist(Pawn pawn)
     {
-        base.Apply(target, dest);
-        var things = GenRadial.RadialDistinctThingsAround(this.parent.pawn.Position, this.parent.pawn.Map, this.parent.def.EffectRadius, true);
-        foreach (var thing in things)
-        {
-            if (thing is Pawn pawn && pawn.health.capacities.CapableOf(PawnCapacityDefOf.Hearing) && pawn.psychicEntropy?.PsychicSensitivity >= 0.1f && pawn.Faction.HostileTo(Faction.OfPlayer))
-            {
-                pawn.health.AddHediff(Props.hediff);
-            }
-        }
-        if (this.Props.casterEffect != null)
-        {
-            Effecter effecter = this.Props.casterEffect.SpawnAttached(this.parent.pawn, this.parent.pawn.MapHeld, 1f);
-            effecter.Trigger(this.parent.pawn, null, -1);
-            effecter.Cleanup();
-        }
-
-    }
-
-    public override void DrawEffectPreview(LocalTargetInfo target)
-    {
-        GenDraw.DrawFieldEdges(this.AffectedCells(target, this.parent.pawn.Map).ToList<IntVec3>(), this.Valid(target, false) ? Color.white : Color.red, null);
-    }
-
-    private IEnumerable<IntVec3> AffectedCells(LocalTargetInfo target, Map map)
-    {
-        if (target.Cell.Filled(this.parent.pawn.Map))
-        {
-            yield break;
-        }
-        foreach (IntVec3 intVec in GenRadial.RadialCellsAround(target.Cell, this.parent.def.EffectRadius, true))
-        {
-            if (intVec.InBounds(map) && GenSight.LineOfSightToEdges(target.Cell, intVec, map, true, null))
-            {
-                yield return intVec;
-            }
-        }
+        var resistChance = Mathf.Min(pawn.GetStatValue(StatDefOf.PsychicSensitivity), pawn.health.capacities.GetLevel(PawnCapacityDefOf.Hearing));
+        var resistChanceAdjusted = Props.chanceFromCurve.Evaluate(resistChance);
+        var roll = Rand.Chance(1f - resistChanceAdjusted);
+        return roll;
     }
 }
 
-public class CompProperties_AbilitySirenSong : CompProperties_AbilityEffect
+[PublicAPI]
+public class CompProperties_AbilitySirenSong : CompProperties_AbilityGiveHediff
 {
-    public CompProperties_AbilitySirenSong()
-    {
-        this.compClass = typeof(CompAbilityEffect_SirenSong);
-    }
-
-    public EffecterDef casterEffect;
-
-    public HediffDef hediff;
+    public SimpleCurve chanceFromCurve = [];
+    public CompProperties_AbilitySirenSong() => compClass = typeof(CompAbilityEffect_SirenSong);
 }

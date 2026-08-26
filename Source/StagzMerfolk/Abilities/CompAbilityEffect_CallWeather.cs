@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using HarmonyLib;
+using JetBrains.Annotations;
 using RimWorld;
 using Verse;
 
@@ -7,43 +8,51 @@ namespace StagzMerfolk;
 
 public class CompAbilityEffect_CallWeather: CompAbilityEffect
 {
-    private new CompProperties_AbilityCallWeather Props
+    public new CompProperties_AbilityCallWeather Props => (CompProperties_AbilityCallWeather)props;
+    public WeatherDef weatherToBeCalled;
+    
+    public override bool GizmoDisabled(out string reason)
     {
-        get
+        if (parent.pawn.MapHeld.weatherDecider.ForcedWeather != null)
         {
-            return (CompProperties_AbilityCallWeather)this.props;
+            reason = "StagzMerfolk_ForcedWeatherActive".Translate();
+            return true;
         }
+        reason = null;
+        return false;
     }
-
+    
     public override void Apply(LocalTargetInfo target, LocalTargetInfo dest)
     {
         base.Apply(target, dest);
         
-        //sets weather
-        var weather = Props.weatherDefs.RandomElement();
-        this.parent.pawn.Map.weatherManager.TransitionTo(weather);
-        //forces duration
-        AccessTools.FieldRefAccess<int>(typeof(WeatherDecider),"curWeatherDuration").Invoke(this.parent.pawn.Map.weatherDecider) = Props.weatherDuration;
-        
-        Messages.Message("StagzMerfolk_RainCall".Translate(this.parent.pawn.LabelShort, weather.label) , this.parent.pawn, MessageTypeDefOf.NeutralEvent, true);
-        
-        
-        if (this.Props.casterEffect != null)
+        //shouldn't happen, but
+        if (weatherToBeCalled == null)
         {
-            Effecter effecter = this.Props.casterEffect.SpawnAttached(this.parent.pawn, this.parent.pawn.MapHeld, 1f);
-            effecter.Trigger(this.parent.pawn, null, -1);
-            effecter.Cleanup();
+            Log.Error("Tried to cast Raincall but weatherDef was null.");
+            return;
         }
+        
+        //sets weather
+        parent.pawn.MapHeld.weatherManager.TransitionTo(weatherToBeCalled);
+        
+        //forces duration
+        AccessTools.FieldRefAccess<int>(typeof(WeatherDecider),"curWeatherDuration").Invoke(parent.pawn.MapHeld.weatherDecider) = Props.weatherDuration;
+        
+        Messages.Message("StagzMerfolk_RainCall".Translate(parent.pawn.LabelShort, weatherToBeCalled.label) , parent.pawn, MessageTypeDefOf.NeutralEvent);
+    }
+
+    public override void PostExposeData()
+    {
+        base.PostExposeData();
+        Scribe_Defs.Look(ref weatherToBeCalled, "weatherToBeCalled");
     }
 }
+[PublicAPI]
 public class CompProperties_AbilityCallWeather : CompProperties_AbilityEffect
 {
-    public CompProperties_AbilityCallWeather()
-    {
-        this.compClass = typeof(CompAbilityEffect_CallWeather);
-    }		
-    
-    public EffecterDef casterEffect;
-    public List<WeatherDef> weatherDefs;
+    public List<WeatherDef> weatherDefsForRandomRoll;
+    public List<WeatherDef> weatherDefsForSelection;
     public int weatherDuration;
+    public CompProperties_AbilityCallWeather() => compClass = typeof(CompAbilityEffect_CallWeather);
 }

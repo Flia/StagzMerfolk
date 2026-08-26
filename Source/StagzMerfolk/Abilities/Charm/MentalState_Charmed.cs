@@ -1,12 +1,14 @@
-﻿using RimWorld;
+﻿using System;
+using RimWorld;
 using Verse;
 using Verse.AI;
 
 namespace StagzMerfolk;
 
+[Obsolete("Left for the sake of ongoing saves. Will be removed with 1.7.")]
 public class MentalState_Charmed : MentalState
 {
-    public float charmChance;
+    public float charmChance = 0.01f;
 
     public override void ExposeData()
     {
@@ -14,14 +16,19 @@ public class MentalState_Charmed : MentalState
         Scribe_Values.Look<float>(ref this.charmChance, "charmChance", 0.1f, false);
     }
 
-    public MentalState_Charmed()
-    {
-        this.charmChance = 0.01f;
-    }
-
     public override RandomSocialMode SocialModeMax()
     {
         return RandomSocialMode.Off;
+    }
+
+    public override bool ForceHostileTo(Thing t)
+    {
+        return pawn?.Faction is {} faction && faction == t.Faction;
+    }
+
+    public override bool ForceHostileTo(Faction f)
+    {
+        return pawn?.Faction is {} faction && faction == f;
     }
 
     public override void PostEnd()
@@ -44,7 +51,6 @@ public class MentalState_Charmed : MentalState
         var letter = (ChoiceLetter_AcceptCharmedJoiner)LetterMaker.MakeLetter(label, taggedString, StagzDefOf.Stagz_AcceptCharmedJoiner, null, null);
         letter.asker = p;
         letter.lookTargets = new LookTargets(p);
-        letter.requiresAliveAsker = true;
         letter.StartTimeout(60000);
 
         Find.LetterStack.ReceiveLetter(letter, null);

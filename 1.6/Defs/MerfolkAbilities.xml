@@ -3,18 +3,16 @@
     <AbilityDef>
         <defName>Stagz_SirenCall</defName>
         <label>siren song</label>
-        <description>The caster releases an enchanting song centred around themselves. Enemies caught within its range will hesitate to strike the caster as they become infatuated.</description>
+        <description>Sing a psychic tune to overwhelm the surrounding hostiles with enchanting melody.\n\nThe song is both a sound and a psychic effect, and therefore is influenced by both psychic sensitivity and hearing capacity of the targets.</description>
         <iconPath>UI/Abilities/SirenCall</iconPath>
-        <targetRequired>False</targetRequired>
+        <targetRequired>false</targetRequired>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-        <cooldownTicksRange>300000</cooldownTicksRange><!-- 5 days -->
-        <canUseAoeToGetTargets>false</canUseAoeToGetTargets>
-        <jobDef>CastAbilityOnThingWithoutWeaponInterruptible</jobDef>
-        <groupAbility>true</groupAbility>
+        <cooldownTicksRange>300000</cooldownTicksRange> <!-- 5 days -->
         <statBases>
-            <Ability_Duration>164</Ability_Duration>
             <Ability_EffectRadius>16.9</Ability_EffectRadius>
         </statBases>
+        <warmupStartSound>Stagz_SirenSongSound2</warmupStartSound>
+        <warmupEffecter>Stagz_SirenCall_Warmup</warmupEffecter>
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
             <label>siren song</label>
@@ -22,61 +20,64 @@
             <range>16.9</range>
             <drawAimPie>true</drawAimPie>
             <requireLineOfSight>false</requireLineOfSight>
-            <warmupEffecter>Stagz_SirenCall_Warmup</warmupEffecter>
             <targetParams>
-                <canTargetSelf>True</canTargetSelf>
+                <canTargetSelf>true</canTargetSelf>
+                <canTargetEntities>false</canTargetEntities>
+                <canTargetSubhumans>false</canTargetSubhumans>
+                <canTargetMechs>false</canTargetMechs>
+                <canTargetBuildings>false</canTargetBuildings>
             </targetParams>
         </verbProperties>
         <comps>
+            <li Class="CompProperties_AbilityEffect">
+                <compClass>CompAbilityEffect_OnlyTargetHostiles</compClass>
+            </li>
             <li Class="StagzMerfolk.CompProperties_AbilitySirenSong">
-                <compClass>StagzMerfolk.CompAbilityEffect_SirenSong</compClass>
-                <hediff>Stagz_Infatuated</hediff>
+                <hediffDef>Stagz_Infatuated</hediffDef>
+                <durationSecondsOverride>300~500</durationSecondsOverride>
+                <chanceFromCurve>
+                    <points>
+                        <li>(0.0, 0.0)</li>
+                        <li>(0.5, 0.75)</li> <!-- e.g. average yttakin --> 
+                        <li>(0.8, 1.0)</li>
+                    </points>
+                </chanceFromCurve>
             </li>
         </comps>
     </AbilityDef>
 
+    <!--TODO: wanted to make it a melee ability so pawns could pathfind automatically, but verb change mid-version breaks saves -->
     <AbilityDef>
         <defName>Stagz_SirenCallCharm</defName>
         <label>charm person</label>
-        <description>The caster attempts to charm a neutral or enemy unit. Upon success, the charmed unit will turn against their own allies and join the player faction after the effect wears off. This is considered a hostile action.</description>
+        <description>Sing a psychic tune to compel a human or an animal into joining your colony. It creates a brief psychic bond, allowing it to affect even the psychically deaf. While the power of the song cannot be resisted outright, charming humans against their will may have later consequences.</description>
         <iconPath>UI/Abilities/Charm</iconPath>
         <targetRequired>true</targetRequired>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <hostile>true</hostile>
-        <cooldownTicksRange>900000</cooldownTicksRange><!-- 15 days -->
+        <cooldownTicksRange>3600000</cooldownTicksRange> <!-- 60 days -->
+        <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
         <canUseAoeToGetTargets>false</canUseAoeToGetTargets>
         <jobDef>CastAbilityOnThingWithoutWeaponInterruptible</jobDef>
-        <groupAbility>true</groupAbility>
-        <statBases>
-            <Ability_Duration>164</Ability_Duration>
-            <Ability_EffectRadius>-1</Ability_EffectRadius>
-        </statBases>
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
             <label>charm person</label>
-            <warmupTime>0</warmupTime>
+            <warmupTime>1</warmupTime>
+            <warmupEffecter>Stagz_Singing</warmupEffecter>
+            <soundCast>Stagz_SirenSongSound3</soundCast>
             <range>3.9</range>
-            <drawAimPie>true</drawAimPie>
             <requireLineOfSight>true</requireLineOfSight>
-            <!-- <warmupEffecter>Stagz_SirenCall_Warmup</warmupEffecter> -->
             <targetParams>
-                <canTargetSelf>false</canTargetSelf>
-                <canTargetPawns>true</canTargetPawns>
-                <canTargetAnimals>false</canTargetAnimals>
+                <canTargetBuildings>false</canTargetBuildings>
                 <canTargetMechs>false</canTargetMechs>
-                <neverTargetIncapacitated>True</neverTargetIncapacitated>
+                <canTargetSubhumans>false</canTargetSubhumans>
+                <canTargetEntities>false</canTargetEntities>
             </targetParams>
         </verbProperties>
         <comps>            
-            <li Class="CompProperties_AbilityGiveMentalState">
-                <compClass>CompAbilityEffect_GiveMentalState</compClass>
-                <stateDef>Stagz_VeryCharmed</stateDef>
-                <goodwillImpact>-15</goodwillImpact>
-                <!-- TODO: change sounds -->
-                <soundMale>BerserkTrance_Resolve_Male</soundMale>
-                <soundFemale>BerserkTrance_Resolve_Female</soundFemale>
-            </li>
-            <li Class="CompProperties_AbilityFleckOnTarget">
-                <fleckDef>PsycastPsychicEffect</fleckDef>
+            <li Class="CompProperties_AbilityEffect">
+                <compClass>StagzMerfolk.CompAbilityEffect_Charm</compClass>
+                <goodwillImpact>-75</goodwillImpact>
             </li>
         </comps>
     </AbilityDef>
@@ -96,6 +97,12 @@
             </li>
         </stages>
         <comps>
+            <li Class="StagzMerfolk.HediffCompProperties_DeepDiveSFX">
+                <effecterDefForAdding>AnimalWarcall_CastOnTarget</effecterDefForAdding>
+            </li>
+            <li Class="HediffCompProperties_Effecter">
+                <stateEffecter>Stagz_Infatuated</stateEffecter>
+            </li>
             <li Class="HediffCompProperties_DisappearsOnDeath"/>
             <li Class="HediffCompProperties_Disappears">
                 <disappearsAfterTicks>30000</disappearsAfterTicks>
@@ -104,6 +111,7 @@
         </comps>
     </HediffDef>
 
+    <!-- TODO: Obsolete, to be removed in 1.7 -->
     <MentalStateDef ParentName="BaseMentalState" Name="Stagz_Charmed">
         <defName>Stagz_Charmed</defName>
         <stateClass>StagzMerfolk.MentalState_Charmed</stateClass>
@@ -121,67 +129,54 @@
         <maxTicksBeforeRecovery>10000</maxTicksBeforeRecovery>
     </MentalStateDef>
 
+    <!-- TODO: Obsolete, to be removed in 1.7 -->
     <MentalStateDef ParentName="Stagz_Charmed">
         <defName>Stagz_VeryCharmed</defName>
         <stateClass>StagzMerfolk.MentalState_VeryCharmed</stateClass>
     </MentalStateDef>
 
-    <!-- <ThingDef ParentName="MoteBase"> -->
-    <!--     <defName>Mote_AnimalWarcallTarget</defName> -->
-    <!--     <thingClass>MoteAttached</thingClass> -->
-    <!--     <altitudeLayer>MoteOverhead</altitudeLayer> -->
-    <!--     <mote> -->
-    <!--         <fadeInTime>0.1</fadeInTime> -->
-    <!--         <fadeOutTime>0.3</fadeOutTime> -->
-    <!--         <solidTime>0.3</solidTime> -->
-    <!--         <growthRate>2</growthRate> -->
-    <!--     </mote> -->
-    <!--     <graphicData> -->
-    <!--         <graphicClass>Graphic_MoteWithAgeSecs</graphicClass> -->
-    <!--         <shaderType>MotePsychicWarmupNeuroquake</shaderType> -->
-    <!--         <texPath>Things/Mote/MoteHellfireCannon_HeatWaveDistortion</texPath> -->
-    <!--         <shaderParameters> -->
-    <!--             <_distortionIntensity>0.5</_distortionIntensity> -->
-    <!--             <_brightnessMultiplier>1.3</_brightnessMultiplier> -->
-    <!--             <_distortionTint>(0.35, 0, 0, 0)</_distortionTint> -->
-    <!--             <_pulseSpeed>1</_pulseSpeed> -->
-    <!--         </shaderParameters> -->
-    <!--         <drawSize>2</drawSize> -->
-    <!--     </graphicData> -->
-    <!-- </ThingDef> -->
-
-    <AbilityDef ParentName="AbilityTouchBase">
+    <AbilityDef>
         <defName>Stagz_CallRain</defName>
         <label>call rain</label>
-        <description>Causes the weather on the local map to become foggy rain or rainy thunderstorm.\n\nThis weather effect has a lower priority and will be overridden by weather triggered by quest or event.</description>
+        <description>Sing a psychic tune and call the rain. The local weather will change into foggy rain or rainy thunderstorm, unless it is already being influenced by an even stronger outside source.\n\nRight-click to select specific weather.</description>
         <iconPath>UI/Abilities/Raincalling</iconPath>
+        <gizmoClass>StagzMerfolk.Command_Rainfall</gizmoClass>
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-        <targetRequired>False</targetRequired>
-        <cooldownTicksRange>300000</cooldownTicksRange>
-        <charges>2</charges>
-        <cooldownPerCharge>true</cooldownPerCharge>
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+        <targetRequired>false</targetRequired>
+        <cooldownTicksRange>300000</cooldownTicksRange> <!-- 5 days -->
+        <showCastingProgressBar>true</showCastingProgressBar>
+        <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+        <warmupEffecter>Stagz_Singing</warmupEffecter>
+        <warmupMote>Stagz_RaincallWarmupMote</warmupMote> <!-- Change mote lifespan if warmup time changes, should be exact -->
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
-            <warmupTime>5</warmupTime>
+            <useableInVacuum>false</useableInVacuum>
+            <useableInPocketMaps>false</useableInPocketMaps>
+            <drawAimPie>false</drawAimPie>
+            <warmupTime>10</warmupTime>
             <range>-1</range>
+            <targetable>false</targetable>
             <targetParams>
                 <canTargetSelf>True</canTargetSelf>
-                <canTargetPawns>false</canTargetPawns>
-                <canTargetBuildings>false</canTargetBuildings>
-                <canTargetAnimals>false</canTargetAnimals>
-                <canTargetHumans>false</canTargetHumans>
-                <canTargetMechs>false</canTargetMechs>
             </targetParams>
         </verbProperties>
         <comps>
             <li Class="StagzMerfolk.CompProperties_AbilityCallWeather">
                 <compClass>StagzMerfolk.CompAbilityEffect_CallWeather</compClass>
-                <weatherDefs>
+                <weatherDefsForRandomRoll>
                     <li>RainyThunderstorm</li>
                     <li>FoggyRain</li>
-                </weatherDefs>
-                <weatherDuration>60000</weatherDuration>
+                </weatherDefsForRandomRoll>
+                <weatherDefsForSelection>
+                    <li>Rain</li>
+                    <li>RainyThunderstorm</li>
+                    <li>FoggyRain</li>
+                    <li MayRequire="Ludeon.RimWorld.Odyssey">TorrentialRain</li>
+                </weatherDefsForSelection>
+                <weatherDuration>60000</weatherDuration> <!-- one day -->
             </li>
         </comps>
     </AbilityDef>
@@ -190,12 +185,13 @@
     <AbilityDef MayRequireAnyOf="Ludeon.RimWorld.Royalty,Ludeon.RimWorld.Anomaly">
         <defName>Stagz_DeepDive</defName>
         <label>deep dive</label>
-        <description>Dive into a water tile and become invisible. The diver can move freely within water tiles, but any other actions will cause them to surface.\n\nWhile underwater, press the ability again to surface on command.</description>
+        <description>Dive into water and become invisible. The diver can move freely within water tiles, but any other actions will cause you to surface.\n\nWhile underwater, press the ability again to surface on command.</description>
         <iconPath>UI/Abilities/DeepDive</iconPath>
         <cooldownTicksRange>30</cooldownTicksRange>
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-        <targetRequired>False</targetRequired>
+        <targetRequired>false</targetRequired>
+        <groupAbility>true</groupAbility>
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
             <nonInterruptingSelfCast>true</nonInterruptingSelfCast>

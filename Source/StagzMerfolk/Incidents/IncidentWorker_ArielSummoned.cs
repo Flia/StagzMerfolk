@@ -84,7 +84,6 @@ public class IncidentWorker_ArielSummoned : IncidentWorker
         var letter = (ChoiceLetter_AcceptCharmedJoiner) LetterMaker.MakeLetter(label, taggedString, def.letterDef, quest: null);
         letter.asker = merrenJoiner;
         letter.lookTargets = new LookTargets(merrenJoiner);
-        letter.requiresAliveAsker = true;
         letter.StartTimeout(GenDate.TicksPerDay);
         Find.LetterStack.ReceiveLetter(letter);
 

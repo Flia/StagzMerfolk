@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Text;
 using JetBrains.Annotations;
 using LudeonTK;
 using Verse;
@@ -41,4 +42,22 @@ public class DebugTools
             }
         }
     }
+
+    [DebugAction("StagzMerfolk", actionType = DebugActionType.Action)]
+    private static void DumpCharmTrackerToLog()
+    {
+        StringBuilder message = new($"Current tick: {Find.TickManager.TicksGame}.");
+        if (GameComp_CharmTracker.pawnsWithPendingConsequences == null || GameComp_CharmTracker.pawnsWithPendingConsequences.Count == 0)
+        {
+            Log.Message(message.Append(" List was empty or null."));
+            return;
+        }
+        foreach (var record in GameComp_CharmTracker.pawnsWithPendingConsequences)
+        {
+            message.Append($" {record.pawn.Name}, {record.outcomeDef.label}, due at {record.triggerConsequenceTick}");
+            message.Append(Find.TickManager.TicksGame < record.triggerConsequenceTick ? "." : ", OVERDUE.");
+        } 
+        Log.Message(message);
+    }
+    
 }

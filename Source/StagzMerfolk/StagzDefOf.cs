@@ -37,9 +37,6 @@ public class StagzDefOf
     public static HediffDef Stagz_CoveredInDye;
     public static EffecterDef Stagz_DyeingTail;
     
-    public static MentalStateDef Stagz_Charmed;
-    public static MentalStateDef Stagz_VeryCharmed;
-
     public static LetterDef Stagz_AcceptCharmedJoiner;
     [MayRequireRoyalty]
     public static IncidentDef Stagz_VirtuosoSummoned;
@@ -50,13 +47,11 @@ public class StagzDefOf
 
     public static ShaderTypeDef StagzTransparentComplex; 
     
+    public static MentalStateDef GiveUpExit;
+    public static HediffDef Stagz_Infatuated;
+
     static StagzDefOf()
     {
         DefOfHelper.EnsureInitializedInCtor(typeof(StagzDefOf));
     }
-}
-
-public static class StagzCollections
-{
-    public static readonly MentalStateDef[] StateDefs = { StagzDefOf.Stagz_Charmed, StagzDefOf.Stagz_VeryCharmed };
 }
