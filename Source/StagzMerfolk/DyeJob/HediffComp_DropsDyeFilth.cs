@@ -19,7 +19,6 @@ public class HediffComp_DropsDyeFilth : HediffComp_Disappears
         base.CompPostPostAdd(dinfo);
         filthColor = parent.pawn.GetMerrenScaleColorOrFailsafe();
         ticksForSmearing = Props.directionalFilthTicks;
-        disappearsAfterTicks = ticksToDisappear;
         CreateDyeSplatter();
     }
     
@@ -80,8 +79,20 @@ public class HediffComp_DropsDyeFilth : HediffComp_Disappears
     
     public override void CompExposeData()
     {
-        base.CompExposeData();
-        Scribe_Values.Look(ref lastSmearDropPos, "filthPos");
+        if (Scribe.EnterNode("StagzMerfolk_DropsDyeFilth"))
+        {
+            try
+            {
+                base.CompExposeData();
+                Scribe_Values.Look(ref lastSmearDropPos, "filthPos");
+                Scribe_Values.Look(ref ticksForSmearing, "ticksForSmearing");
+                Scribe_Values.Look(ref filthColor, "filthColor", Color.white);
+            }
+            finally
+            {
+                Scribe.ExitNode();
+            }
+        }
     }
 }
 

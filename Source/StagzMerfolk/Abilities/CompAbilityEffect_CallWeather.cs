@@ -6,7 +6,7 @@ using Verse;
 
 namespace StagzMerfolk;
 
-public class CompAbilityEffect_CallWeather: CompAbilityEffect
+public class CompAbilityEffect_CallWeather : CompAbilityEffect
 {
     public new CompProperties_AbilityCallWeather Props => (CompProperties_AbilityCallWeather)props;
     public WeatherDef weatherToBeCalled;
@@ -44,10 +44,21 @@ public class CompAbilityEffect_CallWeather: CompAbilityEffect
 
     public override void PostExposeData()
     {
-        base.PostExposeData();
-        Scribe_Defs.Look(ref weatherToBeCalled, "weatherToBeCalled");
+        if (Scribe.EnterNode("StagzMerfolk_Raincall"))
+        {
+            try
+            {
+                base.PostExposeData();
+                Scribe_Defs.Look(ref weatherToBeCalled, "weatherToBeCalled");
+            }
+            finally
+            {
+                Scribe.ExitNode();
+            }
+        }
     }
 }
+
 [PublicAPI]
 public class CompProperties_AbilityCallWeather : CompProperties_AbilityEffect
 {

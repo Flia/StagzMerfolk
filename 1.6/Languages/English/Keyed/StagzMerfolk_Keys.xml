@@ -38,4 +38,8 @@
     <StagzMerfolk_UI_GeneticColor>genetic color</StagzMerfolk_UI_GeneticColor>
     <StagzMerfolk_FloatMenu_ChangeMerrenScaleColor>change scale color</StagzMerfolk_FloatMenu_ChangeMerrenScaleColor>
     <StagzMerfolk_FloatMenu_NoReachableDye>no reachable dye</StagzMerfolk_FloatMenu_NoReachableDye>
+
+    <StagzMerfolk_Settings_Category>Goji's Fantasy Race: Merren</StagzMerfolk_Settings_Category>
+    <StagzMerfolk_Settings_DbhCleaningCountsAsHydrationLabel>Dub's Bad Hygiene cleaning counts as hydration</StagzMerfolk_Settings_DbhCleaningCountsAsHydrationLabel>
+    <StagzMerfolk_Settings_DbhCleaningCountsAsHydrationTooltip>Enables aquatic hydration needs to be met when a pawn cleans themselves in Dub's Bad Hygiene.</StagzMerfolk_Settings_DbhCleaningCountsAsHydrationTooltip>
 </LanguageData>

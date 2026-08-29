@@ -8,15 +8,9 @@ namespace StagzMerfolk.HarmonyPatches;
 [HarmonyPatch]
 public class DbhHygieneCleanPatches
 {
-    private static bool Prepare()
-    {
-        return ModLister.AnyModActiveNoSuffix(["Dubwise.DubsBadHygiene", "Dubwise.DubsBadHygiene.Lite"]);
-    }
+    private static bool Prepare() => ModLister.AnyModActiveNoSuffix(["Dubwise.DubsBadHygiene", "Dubwise.DubsBadHygiene.Lite"]);
 
-    private static MethodInfo TargetMethod()
-    {
-        return AccessTools.Method("DubsBadHygiene.Need_Hygiene:clean");
-    }
+    private static MethodInfo TargetMethod() => AccessTools.Method("DubsBadHygiene.Need_Hygiene:clean");
 
     private static void Postfix(float val, ref Pawn ___pawn)
     {

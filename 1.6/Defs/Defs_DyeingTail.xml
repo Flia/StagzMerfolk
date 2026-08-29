@@ -82,7 +82,6 @@
             <ignoreFilthMultiplierStat>true</ignoreFilthMultiplierStat>
             <disappearsInDays>35~40</disappearsInDays>
             <cleaningWorkToReduceThickness>100</cleaningWorkToReduceThickness> <!-- but hard to clean. Rain also doesn't wash it away -->
-            <canFilthAttach>true</canFilthAttach>
             <cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
         </filth>
     </ThingDef>

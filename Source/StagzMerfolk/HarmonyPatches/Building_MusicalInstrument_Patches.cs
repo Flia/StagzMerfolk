@@ -7,9 +7,7 @@ namespace StagzMerfolk.HarmonyPatches;
 [HarmonyPatch(typeof(Building_MusicalInstrument), "StopPlaying")]
 public class Building_MusicalInstrument_Patches
 {
-    private static float spawnChance = StagzDefOf.Stagz_VirtuosoSummoned.HasModExtension<ArielSpawnModExtension>()
-        ? StagzDefOf.Stagz_VirtuosoSummoned.GetModExtension<ArielSpawnModExtension>().SpawnChance
-        : 0f;
+    private static float spawnChance = StagzDefOf.Stagz_VirtuosoSummoned.GetModExtension<ArielSpawnModExtension>()?.SpawnChance ?? 0f;
 
     private static void Prefix(Pawn ___currentPlayer)
     {
