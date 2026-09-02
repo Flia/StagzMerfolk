@@ -7,14 +7,14 @@ using Verse;
 namespace StagzMerfolk;
 
 [UsedImplicitly]
-public class Alert_Dehydration : Alert
+public class Alert_DehydrationPrisoners : Alert
 {
     private readonly List<Pawn> dehydratedPawns = [];
     private readonly StringBuilder sb = new();
 
-    public Alert_Dehydration()
+    public Alert_DehydrationPrisoners()
     {
-        defaultLabel = "StagzMerfolk_Dehydration".Translate();
+        defaultLabel = "StagzMerfolk_DehydrationPrisoners".Translate();
         defaultPriority = AlertPriority.High;
     }
 
@@ -23,7 +23,7 @@ public class Alert_Dehydration : Alert
         get
         {
             dehydratedPawns.Clear();
-            foreach (Pawn pawn in PawnsFinder.AllMapsCaravansAndTravellingTransporters_AliveSpawned_FreeColonists_NoSuspended)
+            foreach (Pawn pawn in PawnsFinder.AllMaps_PrisonersOfColonySpawned)
             {
                 if (pawn.needs.TryGetNeed(StagzDefOf.Stagz_NeedAquatic) is Stagz_Need_Aquatic need && need.Dehydrating)
                 {
@@ -33,13 +33,12 @@ public class Alert_Dehydration : Alert
             return dehydratedPawns;
         }
     }
-
+    
     public override TaggedString GetExplanation()
     {
         sb.Length = 0;
-        foreach (Pawn pawn in dehydratedPawns)
-            sb.AppendLine("  - " + pawn.NameShortColored.Resolve());
-        return "StagzMerfolk_DehydrationDesc".Translate((NamedArgument) sb.ToString().TrimEndNewlines());
+        foreach (Pawn pawn in dehydratedPawns) sb.AppendLine("  - " + pawn.NameShortColored.Resolve());
+        return "StagzMerfolk_DehydrationPrisonersDesc".Translate((NamedArgument) sb.ToString().TrimEndNewlines());
     }
 
     public override AlertReport GetReport() => AlertReport.CulpritsAre(DehydratedPawns);

@@ -33,7 +33,9 @@
 
     <StagzMerfolk_DehydrationEstimationOnTooltip>At the current fall rate, {PAWN_nameDef} will start dehydrating in {DURATION}.</StagzMerfolk_DehydrationEstimationOnTooltip>
     <StagzMerfolk_Dehydration>Skin dehydration</StagzMerfolk_Dehydration>
-    <StagzMerfolk_DehydrationDesc>These colonists are aquatic but have been out of water for too long:\n{0}\n\nGet them to water. Even a toxic puddle is fine.</StagzMerfolk_DehydrationDesc>
+    <StagzMerfolk_DehydrationDesc>These colonists are aquatic but have been out of water for too long:\n{0}\n\nIf left unaddressed, dehydration will eventually kill them. Get them to water. Even a toxic puddle is fine.</StagzMerfolk_DehydrationDesc>
+    <StagzMerfolk_DehydrationPrisoners>Skin dehydration (prisoners)</StagzMerfolk_DehydrationPrisoners>
+    <StagzMerfolk_DehydrationPrisonersDesc>These prisoners are aquatic but have been out of water for too long:\n{0}\n\nIf left unaddressed, dehydration will eventually kill them. Get them to water. Even a toxic puddle is fine.</StagzMerfolk_DehydrationPrisonersDesc>
     
     <StagzMerfolk_UI_GeneticColor>genetic color</StagzMerfolk_UI_GeneticColor>
     <StagzMerfolk_FloatMenu_ChangeMerrenScaleColor>change scale color</StagzMerfolk_FloatMenu_ChangeMerrenScaleColor>

@@ -29,7 +29,7 @@
         </value>
     </Operation>
     <Operation Class="PatchOperationInsert">
-        <xpath>*/ThinkTreeDef[defName = "MainColonistBehaviorCore"]/thinkRoot[@Class="ThinkNode_Tagger"]/subNodes/li[@Class="ThinkNode_PrioritySorter"]/subNodes//li[2]</xpath>
+        <xpath>Defs/ThinkTreeDef//li[@Class="JobGiver_SatifyChemicalDependency"]</xpath>
         <value>
             <li Class="StagzMerfolk.JobGiver_SeekHydration"/>
         </value>
