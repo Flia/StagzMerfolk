@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!-- todo: versions for several tech levels - there are different fantasies about Sunken Atlantis People -->
+    <!-- pure tribal, pure tribal with some glittertech, pure glittertech ? -->
+    <!-- there's also some variance in how savage they should be, cannibal sirens vs disney's little mermaid -->
+
+    <FactionDef ParentName="TribeBase">
+        <defName>MerrenCivil</defName>
+        <label>gentle merren tribe</label>
+        
+
+        <!-- TODO block -->
+        
+        <description>These people have been here a very long time. Maybe their ancestors crashed here a thousand years ago. Maybe they survived some cataclysm that destroyed a technological civilization here. In any case, the tribals are mostly nomadic people who live off the land using primitive tools and weapons.\n\nDespite their apparent technological weakness, the tribals can be dangerous enemies and valuable friends because of their skill with low-tech warfare, their numbers, and their hardiness.\n\nThis particular tribe pursues a gentle way of life where they can. They are quite open to trade and alliances, even with strange peoples.</description>
+        <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+        <configurationListOrderPriority>30</configurationListOrderPriority>
+        <factionIconPath>World/WorldObjects/Expanding/Village</factionIconPath>
+        <apparelStuffFilter>
+            <thingDefs>
+                <li>Cloth</li>
+                <li>Leather_Lizard</li>
+                <li>Leather_Bird</li>
+                <li MayRequire="Ludeon.RimWorld.Odyssey">Leather_Sealskin</li>
+                <li MayRequire="Ludeon.RimWorld.Odyssey">Leather_Hippo</li>
+            </thingDefs>
+        </apparelStuffFilter>
+        
+        <!-- end of to do block -->
+
+        <techLevel>Neolithic</techLevel>
+        <colorSpectrum>
+            <li>(0, 1, 1)</li>
+            <li>(0, 0.6, 1)</li>
+            <li>(0.2, 1, 0.6)</li>
+            <li>(0.2, 0.8, 1)</li>
+            <li>(0.2, 1, 0.8)</li>
+        </colorSpectrum>
+        <xenotypeSet>
+            <xenotypeChances Inherit="False">
+                <Stagz_Merfolk_Coastal>0.70</Stagz_Merfolk_Coastal>
+                <Stagz_Merfolk_Abyssal>0.30</Stagz_Merfolk_Abyssal>
+            </xenotypeChances>
+        </xenotypeSet>
+        <disallowedMemes>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Raider</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+        </disallowedMemes>
+        <arrivalLayerWhitelist>
+            <li>Surface</li>
+            <li>HDS_Layer_Ocean</li>
+        </arrivalLayerWhitelist>
+        <layerWhitelist>
+            <li>HDS_Layer_Ocean</li>
+        </layerWhitelist>
+        <backstoryFilters>
+            <li>
+                <categories>
+                    <li>Stagz_Coastal</li>
+                </categories>
+                <commonality>0.9</commonality>
+            </li>
+            <li>
+                <categories>
+                    <li>Outlander</li>
+                </categories>
+                <commonality>0.1</commonality>
+            </li>
+        </backstoryFilters>
+        <factionNameMaker>NamerFactionTribal</factionNameMaker>
+        <settlementNameMaker>NamerSettlementTribal</settlementNameMaker>
+    </FactionDef>
+
+
+    <!--
+    <FactionDef ParentName="TribeBase" Name="TribeRoughBase" Abstract="True">
+           <naturalEnemy>true</naturalEnemy>
+           <disallowedMemes>
+               <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+               <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
+               <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+               <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+           </disallowedMemes>
+           <colorSpectrum>
+               <li>(0.03, 0.47, 0.16)</li>
+               <li>(0.49, 0.96, 0.51)</li>
+           </colorSpectrum>
+           <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+           <configurationListOrderPriority>40</configurationListOrderPriority>
+       </FactionDef>
+       
+      <FactionDef ParentName="TribeRoughBase">
+           <defName>TribeRough</defName>
+           <label>fierce tribe</label>
+           <description>These people have been here a very long time. Maybe their ancestors crashed here a thousand years ago. Maybe they survived some cataclysm that destroyed a technological civilization here. In any case, the tribals are mostly nomadic people who live off the land using primitive tools and weapons.\n\nDespite their apparent technological weakness, the tribals can be dangerous enemies and valuable friends because of their skill with low-tech warfare, their numbers, and their hardiness.\n\nThis particular tribe values warlike dominance; it may be difficult to turn them into an ally.</description>
+           <factionIconPath>World/WorldObjects/Expanding/VillageRough</factionIconPath>
+       </FactionDef>
+   
+       <FactionDef ParentName="TribeBase" Name="TribeSavageBase" Abstract="True">
+           <permanentEnemy>true</permanentEnemy>
+           <requiredMemes>
+               <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+           </requiredMemes>
+           <disallowedMemes>
+               <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+               <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+           </disallowedMemes>
+           <colorSpectrum>
+               <li>(0.85, 0, 0)</li>
+               <li>(0.85, 0.7, 0.7)</li>
+           </colorSpectrum>
+           <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+           <configurationListOrderPriority>50</configurationListOrderPriority>
+       </FactionDef>
+   
+       <FactionDef ParentName="TribeSavageBase">
+           <defName>TribeSavage</defName>
+           <label>savage tribe</label>
+           <description>These people have been here a very long time. Maybe their ancestors crashed here a thousand years ago. Maybe they survived some cataclysm that destroyed a technological civilization here. In any case, the tribals are mostly nomadic people who live off the land using primitive tools and weapons.\n\nDespite their apparent technological weakness, the tribals can be dangerous enemies because of their skill with low-tech warfare, their numbers, and their hardiness.\n\nThis particular tribe is driven by a blood-and-honor culture; you will not be able to ally with them!</description>
+           <factionIconPath>World/WorldObjects/Expanding/VillageSavage</factionIconPath>
+       </FactionDef>
+       
+       -->
+</Defs>
