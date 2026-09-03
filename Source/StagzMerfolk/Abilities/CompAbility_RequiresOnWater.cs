@@ -5,11 +5,11 @@ using Verse;
 namespace StagzMerfolk;
 
 [PublicAPI]
-public class CompAbility_RequiresOnWater : AbilityComp
+public class CompAbility_RequiresOverWater : AbilityComp
 {
     public override bool GizmoDisabled(out string reason)
     {
-        if (!parent.pawn.OnWater())
+        if (!parent.pawn.OverWater())
         {
             reason = "StagzMerfolk_AbilityDisabledNotOnWater".Translate();
             return true;

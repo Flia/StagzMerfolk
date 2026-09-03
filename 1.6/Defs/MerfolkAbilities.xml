@@ -204,7 +204,7 @@
         </verbProperties>
         <comps>
             <li Class="CompProperties_AbilityEffect">
-                <compClass>StagzMerfolk.CompAbility_RequiresOnWater</compClass>
+                <compClass>StagzMerfolk.CompAbility_RequiresOverWater</compClass>
             </li>
             <li Class="StagzMerfolk.CompProperties_AbilityToggleHediff">
                 <hediffDef>Stagz_DeepDiving</hediffDef>

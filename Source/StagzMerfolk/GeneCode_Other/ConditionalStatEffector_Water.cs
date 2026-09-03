@@ -14,7 +14,7 @@ public class ConditionalStatEffector_Water : ConditionalStatAffecter
         if (!req.HasThing || pawn?.Map == null) return false;
 
         //Check if pawn is on water
-        return pawn.OnWater();
+        return pawn.OverOrInWater();
     }
 
     public override string Label => field ??= "StagzMerfolk_ConditionalStatEffector_Water".Translate();

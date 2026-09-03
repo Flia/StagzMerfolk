@@ -14,10 +14,16 @@ public static class StagzUtils
         return pawn.Map != null && !pawn.Position.Roofed(pawn.Map) && pawn.Map.weatherManager.RainRate > 0.01f;
     }
 
-    public static bool OnWater(this Pawn pawn)
+    public static bool OverWater(this Pawn pawn)
     {
         //GetTerrain can never be null. Defaults to soil
         return pawn.Map != null && pawn.Position.GetTerrain(pawn.Map).IsWater;
+    }
+    
+    //Made as a helper in case more underwater mods come around
+    public static bool OverOrInWater(this Pawn pawn)
+    {
+        return OverWater(pawn) || DeepSeaCompat.Helpers.IsSubmerged(pawn);
     }
 
     public static bool InRiver(this Pawn pawn)

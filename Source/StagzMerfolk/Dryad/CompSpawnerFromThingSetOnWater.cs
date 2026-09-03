@@ -39,7 +39,7 @@ public class CompSpawnerFromThingSetOnWater : ThingComp
             return;
         }
 
-        if (parent is Pawn p && !p.OnWater())
+        if (parent is Pawn p && !p.OverOrInWater())
         {
             return;
         }
