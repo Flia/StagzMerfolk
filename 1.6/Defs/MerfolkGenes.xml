@@ -183,7 +183,8 @@
         <defName>Stagz_FinEars</defName>
         <label>fin ears</label>
         <description>Carriers of this gene have finned ears that are covered in scales.</description>
-        <iconPath>UI/Icons/Genes/Gene_EarFin</iconPath>        
+        <iconPath>UI/Icons/Genes/Gene_EarFin</iconPath>
+        <displayOrderInCategory>71</displayOrderInCategory>
         <renderNodeProperties>
             <li Class="StagzMerfolk.PawnRenderNodeProperties_HasDesiccatedGraphics">
                 <debugLabel>Stagz_FinEars</debugLabel>
@@ -203,18 +204,6 @@
                 <desiccatedTexPath>Things/Pawn/Humanlike/HeadAttachments/MerfolkEarsDesiccated/ears_desiccated</desiccatedTexPath>
             </li>
         </renderNodeProperties>
-        <endogeneCategory>Ears</endogeneCategory>
-        <displayCategory>Cosmetic</displayCategory>
-        <conditionalStatAffecters>
-            <li Class="StagzMerfolk.ConditionalStatEffector_Water">
-                <statOffsets>
-                    <MoveSpeed>0.1</MoveSpeed>
-                </statOffsets>
-            </li>
-        </conditionalStatAffecters>
-        <exclusionTags>
-            <li>Ears</li>
-        </exclusionTags>
         <symbolPack>
             <prefixSymbols>
                 <li><symbol>scale</symbol></li>
@@ -270,19 +259,10 @@
             <li>The color can be changed using dye.</li>
         </customEffectDescriptions>
         <iconPath>UI/Icons/Genes/Gene_FishFin</iconPath>
-        <!-- <iconColor>(0.75, 0.75, 0.75)</iconColor> -->
-        <displayOrderInCategory>1000</displayOrderInCategory>
-        <conditionalStatAffecters>
-            <li Class="StagzMerfolk.ConditionalStatEffector_Water">
-                <statOffsets>
-                    <MoveSpeed>0.1</MoveSpeed>
-                </statOffsets>
-            </li>
-        </conditionalStatAffecters>
-        <biostatCpx>1</biostatCpx>
+        <displayCategory>Cosmetic</displayCategory>
+        <displayOrderInCategory>72</displayOrderInCategory>
+        <biostatCpx>0</biostatCpx>
         <biostatMet>0</biostatMet>
-        <displayCategory>Miscellaneous</displayCategory>
-        <randomChosen>true</randomChosen>
         <renderNodeProperties>
             <li Class="StagzMerfolk.PawnRenderNodeProperties_HasDesiccatedGraphics">
                 <debugLabel>Stagz_BodyFin</debugLabel>
@@ -316,13 +296,12 @@
         <description>Carriers of this gene are agile fighters, they are quick and light in motion.</description>
         <iconPath>UI/Icons/Genes/Gene_Nimbleness</iconPath>
         <displayCategory>Miscellaneous</displayCategory>
-        <displayOrderInCategory>60</displayOrderInCategory>
         <forcedTraits>
             <li>
                 <def>Nimble</def>
             </li>
         </forcedTraits>
         <biostatCpx>1</biostatCpx>
-        <biostatMet>-2</biostatMet>
+        <biostatMet>-1</biostatMet>
     </GeneDef>
 </Defs>

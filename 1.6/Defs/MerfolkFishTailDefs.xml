@@ -16,7 +16,7 @@
         <conditionalStatAffecters>
             <li Class="StagzMerfolk.ConditionalStatEffector_Water">
                 <statOffsets>
-                    <MoveSpeed>0.8</MoveSpeed>
+                    <MoveSpeed>1</MoveSpeed>
                 </statOffsets>
             </li>
         </conditionalStatAffecters>
@@ -61,7 +61,7 @@
         <conditionalStatAffecters>
             <li Class="StagzMerfolk.ConditionalStatEffector_Water">
                 <statOffsets>
-                    <MoveSpeed>0.8</MoveSpeed>
+                    <MoveSpeed>1</MoveSpeed>
                 </statOffsets>
             </li>
         </conditionalStatAffecters>
@@ -75,7 +75,6 @@
         <bodyType>Standard</bodyType>
         <exclusionTags>
             <li>Fur</li>
-            <li>Tail</li>
         </exclusionTags>
     </GeneDef>
 
