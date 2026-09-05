@@ -10,7 +10,7 @@
         <defName>Stagz_WebbedHands</defName>
         <label>webbed hands</label>
         <description>Carriers of this gene have webbed hands.</description>
-        <iconPath>UI/Icons/Genes/Gene_HandsWebbed</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_HandsWebbed</iconPath>
         <displayOrderInCategory>1</displayOrderInCategory>
         <selectionWeight>0</selectionWeight>
         <displayCategory>Miscellaneous</displayCategory>
@@ -39,7 +39,7 @@
         <defName>Stagz_SwiftSwim</defName>
         <label>swift swim</label>
         <description>Carriers of this gene are natural swimmers. When in water, they can move quickly and with grace.</description>
-        <iconPath>UI/Icons/Genes/Gene_SwiftSwim</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_SwiftSwim</iconPath>
         <displayCategory>Movement</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <conditionalStatAffecters>
@@ -60,7 +60,7 @@
         <defName>Stagz_RainVeil</defName>
         <label>rain veil</label>
         <description>Carriers of this gene are able to camouflage themselves during rainy weather, making it difficult for enemies to land a hit.</description>
-        <iconPath>UI/Icons/Genes/Gene_RainVeil</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_RainVeil</iconPath>
         <displayCategory>Miscellaneous</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <conditionalStatAffecters>
@@ -82,7 +82,7 @@
         <defName>Stagz_Raincaller</defName>
         <label>raincaller</label>
         <description>Carriers of this gene are able to manipulate local water particles on a mass scale. This usually leads to heavy rainy weather in which they thrive.</description>
-        <iconPath>UI/Icons/Genes/Gene_Raincaller</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_Raincaller</iconPath>
         <displayCategory>Archite</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <customEffectDescriptions>
@@ -114,7 +114,7 @@
         <defName>Stagz_SirenSong</defName>
         <label>siren song</label>
         <description>Carriers of this gene hum a wordless, haunting melody enchanted with psychic energy. Anyone who hears the song will become obsessed with the songster/songstress.</description>
-        <iconPath>UI/Icons/Genes/Gene_SirenCall</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_SirenCall</iconPath>
         <displayCategory>Ability</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <abilities>
@@ -128,7 +128,7 @@
         <defName>Stagz_Charming</defName>
         <label>charming</label>
         <description>Carrier of this gene has an irresistible charming aura. By inducing their presence with psychic energy, they can easily put others under their spell.</description>
-        <iconPath>UI/Icons/Genes/Gene_Charm</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_Charm</iconPath>
         <displayCategory>Ability</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <customEffectDescriptions>
@@ -161,7 +161,7 @@
             <li>Adds an addtional +20% to melee dodge chance, ignoring the usual 50% melee dodge chance cap.</li>
             <li>75% of melee dodge chance is applied to ranged dodge chance.</li>
         </customEffectDescriptions>
-        <iconPath>UI/Icons/Genes/Gene_KeenReflex</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_KeenReflex</iconPath>
         <displayCategory>Archite</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <biostatCpx>2</biostatCpx>
@@ -179,9 +179,9 @@
         <defName>Stagz_FinEars</defName>
         <label>fin ears</label>
         <description>Carriers of this gene have fin ears that are covered in scales.</description>
-        <iconPath>UI/Icons/Genes/Gene_EarFin</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_EarFin</iconPath>
         <graphicData>
-            <graphicPath>Things/Pawn/Humanlike/HeadAttachments/MerfolkEars/ears</graphicPath>
+            <graphicPath>StagzMerfolk/Things/Pawn/Humanlike/HeadAttachments/MerfolkEars/ears</graphicPath>
             <colorType>Skin</colorType>
             <colorRGBPostFactor>0.9</colorRGBPostFactor>
         </graphicData>
@@ -212,7 +212,7 @@
         <customEffectDescriptions>
             <li>Will be colored the same color as the fishtail if the fishtail gene is present.</li>
         </customEffectDescriptions>
-        <iconPath>UI/Icons/Genes/Gene_FishFin</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_FishFin</iconPath>
         <!-- <iconColor>(0.75, 0.75, 0.75)</iconColor> -->
         <displayOrderInCategory>1000</displayOrderInCategory>
         <conditionalStatAffecters>
@@ -225,7 +225,7 @@
         <biostatCpx>1</biostatCpx>
         <biostatMet>0</biostatMet>
         <graphicData>
-            <graphicPath>Things/Pawn/Humanlike/BodyAttachments/MerfolkFins/fins</graphicPath>
+            <graphicPath>StagzMerfolk/Things/Pawn/Humanlike/BodyAttachments/MerfolkFins/fins</graphicPath>
             <colorType>Custom</colorType>
             <color>(0, 126.5, 126.5)</color>
             <drawOffsetNorth>(0, 0.2, -0.15)</drawOffsetNorth>
@@ -239,7 +239,7 @@
         <label>naturally nimble</label>
         <labelShortAdj>nimble</labelShortAdj>
         <description>Carriers of this gene are agile fighters, they are quick and light in motion.</description>
-        <iconPath>UI/Icons/Genes/Gene_Nimbleness</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_Nimbleness</iconPath>
         <displayCategory>Miscellaneous</displayCategory>
         <displayOrderInCategory>60</displayOrderInCategory>
         <forcedTraits>

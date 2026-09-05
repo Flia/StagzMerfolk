@@ -4,7 +4,7 @@
         <defName>Stagz_SirenCall</defName>
         <label>siren song</label>
         <description>Sing a psychic tune to overwhelm the surrounding hostiles with enchanting melody.\n\nThe song is both a sound and a psychic effect, and therefore is influenced by both psychic sensitivity and hearing capacity of the targets.</description>
-        <iconPath>UI/Abilities/SirenCall</iconPath>
+        <iconPath>StagzMerfolk/UI/Abilities/SirenCall</iconPath>
         <targetRequired>false</targetRequired>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <cooldownTicksRange>300000</cooldownTicksRange> <!-- 5 days -->
@@ -51,7 +51,7 @@
         <defName>Stagz_SirenCallCharm</defName>
         <label>charm person</label>
         <description>Sing a psychic tune to compel a human or an animal into joining your colony. It creates a brief psychic bond, allowing it to affect even the psychically deaf. While the power of the song cannot be resisted outright, charming humans against their will may have later consequences.</description>
-        <iconPath>UI/Abilities/Charm</iconPath>
+        <iconPath>StagzMerfolk/UI/Abilities/Charm</iconPath>
         <targetRequired>true</targetRequired>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
         <hostile>true</hostile>
@@ -139,7 +139,7 @@
         <defName>Stagz_CallRain</defName>
         <label>call rain</label>
         <description>Sing a psychic tune and call the rain. The local weather will change into foggy rain or rainy thunderstorm, unless it is already being influenced by an even stronger outside source.\n\nRight-click to select specific weather.</description>
-        <iconPath>UI/Abilities/Raincalling</iconPath>
+        <iconPath>StagzMerfolk/UI/Abilities/Raincalling</iconPath>
         <gizmoClass>StagzMerfolk.Command_Rainfall</gizmoClass>
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -186,7 +186,7 @@
         <defName>Stagz_DeepDive</defName>
         <label>deep dive</label>
         <description>Dive into water and become invisible. The diver can move freely within water tiles, but any other actions will cause you to surface.\n\nWhile underwater, press the ability again to surface on command.</description>
-        <iconPath>UI/Abilities/DeepDive</iconPath>
+        <iconPath>StagzMerfolk/UI/Abilities/DeepDive</iconPath>
         <cooldownTicksRange>30</cooldownTicksRange>
         <hostile>false</hostile>
         <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>

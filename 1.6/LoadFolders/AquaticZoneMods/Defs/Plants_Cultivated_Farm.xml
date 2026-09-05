@@ -5,7 +5,7 @@
         <label>fibrekelp</label>
         <description>An aquatic plant that yields a fibrous, wood-like substance; they are fibrecorn’s distant cousin.</description>
         <graphicData>
-            <texPath>Things/Plant/Stagz_WoodKelp</texPath>
+            <texPath>StagzMerfolk/Things/Plant/Stagz_WoodKelp</texPath>
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <minifiedDef IsNull="True" />
@@ -43,7 +43,7 @@
             <Nutrition>0.1</Nutrition>
         </statBases>
         <graphicData>
-            <texPath>Things/Plant/Crops/Stagz_DarkAlgae</texPath>
+            <texPath>StagzMerfolk/Things/Plant/Crops/Stagz_DarkAlgae</texPath>
             <graphicClass>Graphic_Random</graphicClass>
         </graphicData>
         <selectable>true</selectable>
@@ -69,7 +69,7 @@
             <wildOrder>2</wildOrder>
             <purpose>Food</purpose>
             <humanFoodPlant>true</humanFoodPlant>
-            <immatureGraphicPath>Things/Plant/Crops/Stagz_DarkAlgae_Immature</immatureGraphicPath>
+            <immatureGraphicPath>StagzMerfolk/Things/Plant/Crops/Stagz_DarkAlgae_Immature</immatureGraphicPath>
         </plant>
     </ThingDef>
 
@@ -78,7 +78,7 @@
         <label>raw quackweed</label>
         <description>An aquatic plant that is commonly consumed by water fowls. Surprisingly, it is edible for humans. It has a neutral to mild taste but some also claim it tastes like sweet cabbage.</description>
         <graphicData>
-            <texPath>Things/Items/Raw/Stagz_RawDarkAlgae</texPath>
+            <texPath>StagzMerfolk/Things/Items/Raw/Stagz_RawDarkAlgae</texPath>
         </graphicData>
         <statBases>
             <MarketValue>1.1</MarketValue>

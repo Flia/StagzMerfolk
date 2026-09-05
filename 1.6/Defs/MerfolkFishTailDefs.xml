@@ -20,7 +20,7 @@
                 </statOffsets>
             </li>
         </conditionalStatAffecters>
-        <iconPath>UI/Icons/Genes/Gene_FishTail2</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_FishTail2</iconPath>
         <prerequisite>Stagz_Aquatic</prerequisite>
         <displayCategory>Miscellaneous</displayCategory>
         <biostatMet>-1</biostatMet>
@@ -42,7 +42,7 @@
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
-                <desiccatedTexPath>Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
             </li>
         </renderNodeProperties>
     </GeneDef>
@@ -65,7 +65,7 @@
                 </statOffsets>
             </li>
         </conditionalStatAffecters>
-        <iconPath>UI/Icons/Genes/Gene_FishTail2</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_FishTail2</iconPath>
         <prerequisite>Stagz_Aquatic</prerequisite>
         <randomChosen>true</randomChosen>
         <displayCategory>Miscellaneous</displayCategory>
@@ -96,7 +96,7 @@
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
-                <desiccatedTexPath>Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
             </li>
     </GeneDef>
     -->
@@ -117,7 +117,7 @@
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
-                <desiccatedTexPath>Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
             </li>
         </renderNodeProperties>
     </GeneDef>
@@ -138,7 +138,7 @@
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
-                <desiccatedTexPath>Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
             </li>
         </renderNodeProperties>
     </GeneDef>
@@ -159,7 +159,7 @@
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
-                <desiccatedTexPath>Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
             </li>
         </renderNodeProperties>
     </GeneDef>
@@ -180,7 +180,7 @@
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
-                <desiccatedTexPath>Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
             </li>
         </renderNodeProperties>
     </GeneDef>
@@ -201,7 +201,7 @@
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
-                <desiccatedTexPath>Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
             </li>
         </renderNodeProperties>
     </GeneDef>
@@ -222,7 +222,7 @@
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
-                <desiccatedTexPath>Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
             </li>
         </renderNodeProperties>
     </GeneDef>
@@ -243,7 +243,7 @@
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
-                <desiccatedTexPath>Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/Desiccated/fishtail</desiccatedTexPath>
             </li>
         </renderNodeProperties>
     </GeneDef>
@@ -272,14 +272,14 @@
         <defName>Stagz_TailFur</defName>
         <noGraphic>true</noGraphic>
         <bodyTypeGraphicPaths>
-            <Female>Things/Pawn/Humanlike/Bodies/MerfolkBodies/female</Female>
-            <Male>Things/Pawn/Humanlike/Bodies/MerfolkBodies/male</Male>
-            <Child>Things/Pawn/Humanlike/Bodies/MerfolkBodies/baby</Child>
-            <Baby>Things/Pawn/Humanlike/Bodies/MerfolkBodies/baby</Baby>
+            <Female>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/female</Female>
+            <Male>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/male</Male>
+            <Child>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/baby</Child>
+            <Baby>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/baby</Baby>
             <!--The following use placeholder textures-->
-            <Hulk>Things/Pawn/Humanlike/Bodies/MerfolkBodies/hulk</Hulk>
-            <Fat>Things/Pawn/Humanlike/Bodies/MerfolkBodies/fat</Fat>
-            <Thin>Things/Pawn/Humanlike/Bodies/MerfolkBodies/thin</Thin>
+            <Hulk>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/hulk</Hulk>
+            <Fat>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/fat</Fat>
+            <Thin>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/thin</Thin>
         </bodyTypeGraphicPaths>
     </FurDef>
 </Defs>

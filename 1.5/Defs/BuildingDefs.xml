@@ -6,14 +6,14 @@
         <description>A specially-treated wooden lantern that produces a dim light over a medium area while floating on water. Can be automatically refuelled with wood. Produce a tiny amount of heat.</description>
         <category>Building</category>
         <graphicData>
-            <texPath>Things/Building/FloatingLamp/Lamp</texPath>
+            <texPath>StagzMerfolk/Things/Building/FloatingLamp/Lamp</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawRotated>false</drawRotated>
             <damageData>
                 <rect>(0.35,0.35,0.3,0.3)</rect>
             </damageData>
         </graphicData>
-        <uiIconPath>Things/Building/FloatingLamp/LampOn</uiIconPath>
+        <uiIconPath>StagzMerfolk/Things/Building/FloatingLamp/LampOn</uiIconPath>
         <uiIconScale>0.85</uiIconScale>
         <rotatable>false</rotatable>
         <altitudeLayer>Building</altitudeLayer>
