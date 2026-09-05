@@ -262,10 +262,10 @@
         <defName>Stagz_TailFur</defName>
         <noGraphic>true</noGraphic>
         <bodyTypeGraphicPaths>
-            <Female>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/female</Female>
-            <Male>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/male</Male>
-            <Child>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/baby</Child>
-            <Baby>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/baby</Baby>
+            <Female>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Female</Female>
+            <Male>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Male</Male>
+            <Child>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Baby</Child>
+            <Baby>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Baby</Baby>
         </bodyTypeGraphicPaths>
     </FurDef>
 </Defs>
