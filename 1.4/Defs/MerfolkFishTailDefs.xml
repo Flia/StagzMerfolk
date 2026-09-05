@@ -19,7 +19,7 @@
                 </statOffsets>
             </li>
         </conditionalStatAffecters>
-        <iconPath>UI/Icons/Genes/Gene_FishTail2</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_FishTail2</iconPath>
         <prerequisite>Stagz_Aquatic</prerequisite>
         <displayCategory>Miscellaneous</displayCategory>
         <biostatMet>-2</biostatMet>
@@ -54,7 +54,7 @@
                 </statOffsets>
             </li>
         </conditionalStatAffecters>
-        <iconPath>UI/Icons/Genes/Gene_FishTail2</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_FishTail2</iconPath>
         <prerequisite>Stagz_Aquatic</prerequisite>
         <randomChosen>true</randomChosen>
         <displayCategory>Miscellaneous</displayCategory>
@@ -191,10 +191,10 @@
         <defName>Stagz_TailFur</defName>
         <noGraphic>true</noGraphic>
         <bodyTypeGraphicPaths>
-            <Female>Things/Pawn/Humanlike/Bodies/MerfolkBodies/female</Female>
-            <Male>Things/Pawn/Humanlike/Bodies/MerfolkBodies/male</Male>
-            <Child>Things/Pawn/Humanlike/Bodies/MerfolkBodies/baby</Child>
-            <Baby>Things/Pawn/Humanlike/Bodies/MerfolkBodies/baby</Baby>
+            <Female>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/female</Female>
+            <Male>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/male</Male>
+            <Child>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/baby</Child>
+            <Baby>StagzMerfolk/Things/Pawn/Humanlike/Bodies/MerfolkBodies/baby</Baby>
         </bodyTypeGraphicPaths>
     </FurDef>
 </Defs>

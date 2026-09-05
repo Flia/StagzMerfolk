@@ -7,7 +7,7 @@
         <customEffectDescriptions>
             <li>Ignores terrain pathing costs while in water.</li>
         </customEffectDescriptions>
-        <iconPath>UI/Icons/Genes/Gene_Aquatic</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_Aquatic</iconPath>
         <displayCategory>Miscellaneous</displayCategory>
         <causesNeed>Stagz_NeedAquatic</causesNeed>
         <biostatMet>4</biostatMet>

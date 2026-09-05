@@ -69,11 +69,11 @@
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/DryadSquid/DryadSquid</texPath>
+					<texPath>StagzMerfolk/Things/Pawn/Animal/DryadSquid/DryadSquid</texPath>
 					<drawSize>1</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/DryadSquid/Dessicated_DryadSquid</texPath>
+					<texPath>StagzMerfolk/Things/Pawn/Animal/DryadSquid/Dessicated_DryadSquid</texPath>
 					<drawSize>1</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
@@ -84,7 +84,7 @@
 		<defName>Stagz_InkSpray</defName>
 		<label>ink spray</label>
 		<graphicData>
-			<texPath>Things/Projectiles/InkSpray</texPath>
+			<texPath>StagzMerfolk/Things/Projectiles/InkSpray</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<thingClass>Projectile_Explosive</thingClass>

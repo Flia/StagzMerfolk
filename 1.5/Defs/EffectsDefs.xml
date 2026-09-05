@@ -50,13 +50,13 @@
         <defName>Stagz_SirenCall_Fleck</defName>
         <randomGraphics>
             <li>
-                <texPath>Things/Motes/SirenCall/Note_a</texPath>
+                <texPath>StagzMerfolk/Things/Motes/SirenCall/Note_a</texPath>
                 <shaderType>MoteGlow</shaderType>
                 <graphicClass>Graphic_Fleck</graphicClass>
                 <drawSize>(1,1)</drawSize>
             </li>
             <li>
-                <texPath>Things/Motes/SirenCall/Note_b</texPath>
+                <texPath>StagzMerfolk/Things/Motes/SirenCall/Note_b</texPath>
                 <shaderType>MoteGlow</shaderType>
                 <graphicClass>Graphic_Fleck</graphicClass>
                 <drawSize>(1,1)</drawSize>

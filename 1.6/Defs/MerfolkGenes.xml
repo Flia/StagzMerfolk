@@ -10,7 +10,7 @@
         <defName>Stagz_WebbedHands</defName>
         <label>webbed hands</label>
         <description>Carriers of this gene have webbed hands.</description>
-        <iconPath>UI/Icons/Genes/Gene_HandsWebbed</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_HandsWebbed</iconPath>
         <displayOrderInCategory>1</displayOrderInCategory>
         <selectionWeight>0</selectionWeight>
         <displayCategory>Miscellaneous</displayCategory>
@@ -39,7 +39,7 @@
         <defName>Stagz_SwiftSwim</defName>
         <label>swift swim</label>
         <description>Carriers of this gene are natural swimmers. When in water, they can move quickly and with grace.</description>
-        <iconPath>UI/Icons/Genes/Gene_SwiftSwim</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_SwiftSwim</iconPath>
         <displayCategory>Movement</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <conditionalStatAffecters>
@@ -60,7 +60,7 @@
         <defName>Stagz_RainVeil</defName>
         <label>rain veil</label>
         <description>Carriers of this gene are able to camouflage themselves during rainy weather, making it difficult for enemies to land a hit.</description>
-        <iconPath>UI/Icons/Genes/Gene_RainVeil</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_RainVeil</iconPath>
         <displayCategory>Miscellaneous</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <conditionalStatAffecters>
@@ -82,7 +82,7 @@
         <defName>Stagz_Raincaller</defName>
         <label>raincaller</label>
         <description>Carriers of this gene are able to manipulate local water particles on a mass scale. This usually leads to heavy rainy weather in which they thrive.</description>
-        <iconPath>UI/Icons/Genes/Gene_Raincaller</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_Raincaller</iconPath>
         <displayCategory>Archite</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <customEffectDescriptions>
@@ -110,7 +110,7 @@
         <label>water</label>
         <modExtensions>
             <li MayRequire="VanillaExpanded.VPsycastsE" Class="VanillaPsycastsExpanded.MeditationFocusExtension">
-                <icon>UI/Icons/Psyfocus/PsyfocusWater</icon>
+                <icon>StagzMerfolk/UI/Icons/Psyfocus/PsyfocusWater</icon>
             </li>
         </modExtensions>
     </MeditationFocusDef>
@@ -119,7 +119,7 @@
         <defName>Stagz_SirenSong</defName>
         <label>siren song</label>
         <description>Carriers of this gene can hum a wordless, haunting melody enchanted with psychic energy. Anyone who hears the song will become obsessed with the songster/songstress.</description>
-        <iconPath>UI/Icons/Genes/Gene_SirenCall</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_SirenCall</iconPath>
         <displayCategory>Ability</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <abilities>
@@ -133,7 +133,7 @@
         <defName>Stagz_Charming</defName>
         <label>charming</label>
         <description>Carriers of this gene have an irresistible charming aura. By inducing their presence with psychic energy, they can easily put others under their spell.</description>
-        <iconPath>UI/Icons/Genes/Gene_Charm</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_Charm</iconPath>
         <displayCategory>Ability</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <customEffectDescriptions>
@@ -165,7 +165,7 @@
         <customEffectDescriptions>
             <li>100% of melee dodge chance is applied to ranged dodge chance.</li>
         </customEffectDescriptions>
-        <iconPath>UI/Icons/Genes/Gene_KeenReflex</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_KeenReflex</iconPath>
         <displayCategory>Archite</displayCategory>
         <displayOrderInCategory>500</displayOrderInCategory>
         <biostatCpx>2</biostatCpx>
@@ -183,14 +183,14 @@
         <defName>Stagz_FinEars</defName>
         <label>fin ears</label>
         <description>Carriers of this gene have finned ears that are covered in scales.</description>
-        <iconPath>UI/Icons/Genes/Gene_EarFin</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_EarFin</iconPath>
         <displayOrderInCategory>71</displayOrderInCategory>
         <renderNodeProperties>
             <li Class="StagzMerfolk.PawnRenderNodeProperties_HasDesiccatedGraphics">
                 <debugLabel>Stagz_FinEars</debugLabel>
                 <nodeClass>StagzMerfolk.PawnRenderNode_FinEars</nodeClass>
                 <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
-                <texPath>Things/Pawn/Humanlike/HeadAttachments/MerfolkEars/ears</texPath>
+                <texPath>StagzMerfolk/Things/Pawn/Humanlike/HeadAttachments/MerfolkEars/ears</texPath>
                 <colorType>Skin</colorType>
                 <parentTagDef>Head</parentTagDef>
                 <useSkinShader>true</useSkinShader>
@@ -201,7 +201,7 @@
                         <layer>71</layer>
                     </defaultData>
                 </drawData>
-                <desiccatedTexPath>Things/Pawn/Humanlike/HeadAttachments/MerfolkEarsDesiccated/ears_desiccated</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/HeadAttachments/MerfolkEarsDesiccated/ears_desiccated</desiccatedTexPath>
             </li>
         </renderNodeProperties>
         <symbolPack>
@@ -228,12 +228,12 @@
             <li>The color can be changed using dye.</li>
         </customEffectDescriptions>
         <!-- TODO: ideally needs its own icon but making one with mask is problematic -->
-        <iconPath>UI/Icons/Genes/Gene_EarFin</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_EarFin</iconPath>
         <renderNodeProperties Inherit="False">
             <li Class="StagzMerfolk.PawnRenderNodeProperties_HasDesiccatedGraphics">
                 <nodeClass>StagzMerfolk.PawnRenderNode_ColoredFinEars</nodeClass>
                 <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
-                <texPath>Things/Pawn/Humanlike/HeadAttachments/MerfolkEars/ears</texPath>
+                <texPath>StagzMerfolk/Things/Pawn/Humanlike/HeadAttachments/MerfolkEars/ears</texPath>
                 <colorType>Skin</colorType>
                 <parentTagDef>Head</parentTagDef>
                 <useSkinShader>true</useSkinShader>
@@ -244,7 +244,7 @@
                         <layer>71</layer>
                     </defaultData>
                 </drawData>
-                <desiccatedTexPath>Things/Pawn/Humanlike/HeadAttachments/MerfolkEarsDesiccated/ears_desiccated</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/HeadAttachments/MerfolkEarsDesiccated/ears_desiccated</desiccatedTexPath>
             </li>
         </renderNodeProperties>
     </GeneDef>
@@ -258,7 +258,7 @@
             <li>Will be colored the same as the fishtail if the fishtail gene is present.</li>
             <li>The color can be changed using dye.</li>
         </customEffectDescriptions>
-        <iconPath>UI/Icons/Genes/Gene_FishFin</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_FishFin</iconPath>
         <displayCategory>Cosmetic</displayCategory>
         <displayOrderInCategory>72</displayOrderInCategory>
         <biostatCpx>0</biostatCpx>
@@ -268,7 +268,7 @@
                 <debugLabel>Stagz_BodyFin</debugLabel>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishfin</nodeClass>
                 <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
-                <texPath>Things/Pawn/Humanlike/BodyAttachments/MerfolkFins/fins</texPath>
+                <texPath>StagzMerfolk/Things/Pawn/Humanlike/BodyAttachments/MerfolkFins/fins</texPath>
                 <colorType>Custom</colorType>
                 <color>(0, 126.5, 126.5)</color>
                 <overrideMeshSize>(1, 1)</overrideMeshSize>
@@ -284,7 +284,7 @@
                         <layer>-2</layer>
                     </dataNorth>
                 </drawData>
-                <desiccatedTexPath>Things/Pawn/Humanlike/BodyAttachments/MerfolkFins/fins_desiccated</desiccatedTexPath>
+                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/BodyAttachments/MerfolkFins/fins_desiccated</desiccatedTexPath>
             </li>
         </renderNodeProperties>
     </GeneDef>
@@ -294,7 +294,7 @@
         <label>naturally nimble</label>
         <labelShortAdj>nimble</labelShortAdj>
         <description>Carriers of this gene are agile fighters, they are quick and light in motion.</description>
-        <iconPath>UI/Icons/Genes/Gene_Nimbleness</iconPath>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_Nimbleness</iconPath>
         <displayCategory>Miscellaneous</displayCategory>
         <forcedTraits>
             <li>

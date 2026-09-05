@@ -4,7 +4,7 @@
         <defName>Stagz_SirenCall</defName>
         <label>siren song</label>
         <description>The caster releases an enchanting song centred around themselves. Enemies within range will become infatuated (lowering their accuracy).\n\nIn severe cases, they may become charmed to attack their allies. Charmed enemies might request to join the player after the charm effect ends.</description>
-        <iconPath>UI/Abilities/SirenCall</iconPath>
+        <iconPath>StagzMerfolk/UI/Abilities/SirenCall</iconPath>
         <targetRequired>False</targetRequired>
         <cooldownTicksRange>300000</cooldownTicksRange><!-- 5 days -->
         <canUseAoeToGetTargets>false</canUseAoeToGetTargets>
@@ -40,7 +40,7 @@
         <defName>Stagz_SirenCallCharm</defName>
         <label>charm person</label>
         <description>The caster attempts to charm a neutral or enemy unit. Upon success, the charmed unit will turn against their own allies and join the player faction after the effect wears off. This is considered a hostile action.</description>
-        <iconPath>UI/Abilities/Charm</iconPath>
+        <iconPath>StagzMerfolk/UI/Abilities/Charm</iconPath>
         <targetRequired>true</targetRequired>
         <hostile>true</hostile>
         <cooldownTicksRange>900000</cooldownTicksRange><!-- 15 days -->
@@ -155,7 +155,7 @@
         <defName>Stagz_CallRain</defName>
         <label>call rain</label>
         <description>Causes the weather on the local map to become foggy rain or rainy thunderstorm.\n\nThis weather effect has a lower priority and will be overridden by weather triggered by quest or event.</description>
-        <iconPath>UI/Abilities/Raincalling</iconPath>
+        <iconPath>StagzMerfolk/UI/Abilities/Raincalling</iconPath>
         <targetRequired>False</targetRequired>
         <cooldownTicksRange>300000</cooldownTicksRange>
         <charges>2</charges>
@@ -189,7 +189,7 @@
         <defName>Stagz_DeepDive</defName>
         <label>deep dive</label>
         <description>Dive into a water tile and become invisible. Caster can move freely within water tiles, but any other actions will cancel the invisibility.</description>
-        <iconPath>UI/Abilities/DeepDive</iconPath>
+        <iconPath>StagzMerfolk/UI/Abilities/DeepDive</iconPath>
         <cooldownTicksRange>60</cooldownTicksRange>
         <hostile>false</hostile>
         <targetRequired>False</targetRequired>
