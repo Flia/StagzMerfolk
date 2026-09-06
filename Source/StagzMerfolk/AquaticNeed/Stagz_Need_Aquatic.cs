@@ -38,7 +38,7 @@ public class Stagz_Need_Aquatic : Need
     public bool Dehydrating => CurLevelPercentage <= 0.0;
 
     private bool GainingHydration =>
-        pawn.OnWater()
+        pawn.OverOrInWater()
         || pawn.InRain()
         || pawn.health.hediffSet.HasHediff(StagzDefOf.IntheStandaloneHotSpring);
     

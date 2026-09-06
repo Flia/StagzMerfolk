@@ -3,6 +3,7 @@ using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace StagzMerfolk;
 
@@ -14,10 +15,21 @@ public static class StagzUtils
         return pawn.Map != null && !pawn.Position.Roofed(pawn.Map) && pawn.Map.weatherManager.RainRate > 0.01f;
     }
 
-    public static bool OnWater(this Pawn pawn)
+    public static bool OverWater(this Pawn pawn)
     {
         //GetTerrain can never be null. Defaults to soil
         return pawn.Map != null && pawn.Position.GetTerrain(pawn.Map).IsWater;
+    }
+    
+    public static bool OverOrInWater(this Pawn pawn)
+    {
+        return OverWater(pawn) || IsSubmerged(pawn);
+    }
+    
+    //Made as a hook for underwater mods
+    public static bool IsSubmerged(this Pawn pawn)
+    {
+        return false;
     }
 
     public static bool InRiver(this Pawn pawn)

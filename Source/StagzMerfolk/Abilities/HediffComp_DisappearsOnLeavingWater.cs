@@ -14,7 +14,7 @@ public class HediffComp_DisappearsOnLeavingWater : HediffComp
     public override void CompPostTickInterval(ref float severityAdjustment, int delta)
     {
         base.CompPostTickInterval(ref severityAdjustment, delta);
-        if (!parent.pawn.OnWater())
+        if (!parent.pawn.OverOrInWater())
         {
             onLandDuration += delta;
         }
