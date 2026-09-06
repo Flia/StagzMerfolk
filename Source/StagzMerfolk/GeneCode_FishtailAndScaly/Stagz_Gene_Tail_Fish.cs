@@ -14,7 +14,7 @@ public class Stagz_Gene_Tail_Fish : Gene_WithScaleColor
         //harmony patch has to handle this during pawn generation, otherwise if techhediff code happens to generate leg implant it will throw error
         if (PawnGenerator.IsBeingGenerated(pawn)) return;
         
-        pawn.RemoveLegOnlyApparel(true);
+        pawn.RemoveLegOnlyApparel();
         //Only run this on first tail added - otherwise can lead to cursed loop with fishtail hediffcomp
         if (pawn.genes.GenesListForReading.OfType<Stagz_Gene_Tail_Fish>().Count() == 0)
             foreach (var leg in pawn.RaceProps.body.GetPartsWithDef(BodyPartDefOf.Leg))

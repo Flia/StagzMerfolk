@@ -8,17 +8,18 @@ using Verse;
 namespace StagzMerfolk;
 
 //TODO: should convert to extensions block and maybe rename to StagzExtensions sometime
+//don't forget to nullcheck "this" when adding an extension method
 public static class StagzUtils
 {
     public static bool InRain(this Pawn pawn)
     {
-        return pawn.Map != null && !pawn.Position.Roofed(pawn.Map) && pawn.Map.weatherManager.RainRate > 0.01f;
+        return pawn?.Map != null && !pawn.Position.Roofed(pawn.Map) && pawn.Map.weatherManager.RainRate > 0.01f;
     }
 
     public static bool OverWater(this Pawn pawn)
     {
         //GetTerrain can never be null. Defaults to soil
-        return pawn.Map != null && pawn.Position.GetTerrain(pawn.Map).IsWater;
+        return pawn?.Map != null && pawn.Position.GetTerrain(pawn.Map).IsWater;
     }
     
     public static bool OverOrInWater(this Pawn pawn)
@@ -35,7 +36,7 @@ public static class StagzUtils
     public static bool InRiver(this Pawn pawn)
     {
         //Same as above
-        return pawn.Map != null && pawn.Position.GetTerrain(pawn.Map).IsRiver;
+        return pawn?.Map != null && pawn.Position.GetTerrain(pawn.Map).IsRiver;
     }
     
     public static Color? TryGetMerrenScaleColor(this Pawn pawn) {
@@ -46,7 +47,7 @@ public static class StagzUtils
     
     public static Color GetMerrenScaleColorOrFailsafe(this Pawn pawn)
     {
-        return pawn.TryGetMerrenScaleColor() ?? pawn.story?.HairColor ?? Color.white;
+        return pawn?.TryGetMerrenScaleColor() ?? pawn?.story?.HairColor ?? Color.white;
     }
     
     public static void TrySetMerrenScaleColor(this Pawn pawn, Color color)
@@ -57,16 +58,16 @@ public static class StagzUtils
     public static bool GroupsContainsLegsOrFeet(this List<BodyPartGroupDef> bodyPartGroups)
     {
         BodyPartGroupDef[] LegsOrFeetGroups = [BodyPartGroupDefOf.Legs, StagzDefOf.Feet];
-        return bodyPartGroups.Exists(LegsOrFeetGroups.Contains);
+        return bodyPartGroups?.Exists(LegsOrFeetGroups.Contains) == true;
     }
 
     public static bool CoversMoreThanJustLegs(this List<BodyPartGroupDef> bodyPartGroups)
     {
         BodyPartGroupDef[] LegsOrFeetGroups = [BodyPartGroupDefOf.Legs, StagzDefOf.Feet];
-        return bodyPartGroups.Any(group => !LegsOrFeetGroups.Contains(group));
+        return bodyPartGroups?.Any(group => !LegsOrFeetGroups.Contains(group)) == true;
     }
 
-    public static void RemoveLegOnlyApparel(this Pawn pawn, bool drop = false)
+    public static void RemoveLegOnlyApparel(this Pawn pawn)
     {
         if (pawn?.apparel?.WornApparel == null) return;
         for (int i = pawn.apparel.WornApparel.Count - 1; i >= 0; i--)
@@ -74,13 +75,15 @@ public static class StagzUtils
             var apparel = pawn.apparel.WornApparel[i];
             if (apparel.def.apparel.bodyPartGroups.CoversMoreThanJustLegs()) continue;
             //tries to drop on the floor, otherwise silently deletes from game
-            if (drop)
-            {
-                pawn.apparel.TryDrop(apparel);
-                Messages.Message("StagzMerfolk_CannotWearBecauseOfTail".Translate(pawn.LabelShort), MessageTypeDefOf.NeutralEvent);
-            } else
+            if (!pawn.Spawned)
             {
                 pawn.apparel.WornApparel.Remove(apparel);
+            }
+            else
+            {
+                pawn.apparel.TryDrop(apparel);
+                Messages.Message("StagzMerfolk_CannotWearBecauseOfTail".Translate(pawn.LabelShort),
+                    MessageTypeDefOf.NeutralEvent);
             }
         }
     }
