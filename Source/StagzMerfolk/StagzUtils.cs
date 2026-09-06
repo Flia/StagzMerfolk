@@ -30,7 +30,7 @@ public static class StagzUtils
     //Made as a hook for underwater mods
     public static bool IsSubmerged(this Pawn pawn)
     {
-        return false;
+        return DeepSeaCompat.Helpers.IsSubmerged(pawn);
     }
 
     public static bool InRiver(this Pawn pawn)
