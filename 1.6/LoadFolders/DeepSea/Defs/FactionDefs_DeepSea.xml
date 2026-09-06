@@ -15,7 +15,7 @@
         <description>These people have been here a very long time. Maybe their ancestors crashed here a thousand years ago. Maybe they survived some cataclysm that destroyed a technological civilization here. In any case, the tribals are mostly nomadic people who live off the land using primitive tools and weapons.\n\nDespite their apparent technological weakness, the tribals can be dangerous enemies and valuable friends because of their skill with low-tech warfare, their numbers, and their hardiness.\n\nThis particular tribe pursues a gentle way of life where they can. They are quite open to trade and alliances, even with strange peoples.</description>
         <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
         <configurationListOrderPriority>30</configurationListOrderPriority>
-        <factionIconPath>World/WorldObjects/Expanding/Village</factionIconPath>
+        <factionIconPath>World/WorldObjects/Expanding/MerrenSettlement</factionIconPath>
         <apparelStuffFilter>
             <thingDefs>
                 <li>Cloth</li>
@@ -55,6 +55,7 @@
             <li>HDS_Layer_Ocean</li>
         </arrivalLayerWhitelist>
         <layerWhitelist>
+            <li>Surface</li> <!-- TODO: for testing, will be eventually removed -->
             <li>HDS_Layer_Ocean</li>
         </layerWhitelist>
         <backstoryFilters>
