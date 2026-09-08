@@ -38,7 +38,7 @@
                 <colorType>Custom</colorType>
                 <color>(0, 126.5, 126.5)</color>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishtail</nodeClass>
-                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishtail</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
@@ -92,7 +92,7 @@
                 <colorType>Custom</colorType>
                 <color>(0, 126.5, 126.5)</color>            rgb values between 0 and 255, accepts decimals 
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishtail</nodeClass>
-                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishtail</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
@@ -113,7 +113,7 @@
                 <colorType>Custom</colorType>
                 <color>(0, 126.5, 126.5)</color>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishtail</nodeClass>
-                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishtail</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
@@ -134,7 +134,7 @@
                 <colorType>Custom</colorType>
                 <color>(241, 99, 35)</color>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishtail</nodeClass>
-                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishtail</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
@@ -155,7 +155,7 @@
                 <colorType>Custom</colorType>
                 <color>(43,43,43)</color>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishtail</nodeClass>
-                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishtail</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
@@ -176,7 +176,7 @@
                 <colorType>Custom</colorType>
                 <color>(242, 243, 244)</color>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishtail</nodeClass>
-                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishtail</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
@@ -197,7 +197,7 @@
                 <colorType>Custom</colorType>
                 <color>(106, 231, 254)</color>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishtail</nodeClass>
-                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishtail</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
@@ -218,7 +218,7 @@
                 <colorType>Custom</colorType>
                 <color>(180,78,175)</color>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishtail</nodeClass>
-                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishtail</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
@@ -239,7 +239,7 @@
                 <colorType>Custom</colorType>
                 <color>(212,76,73)</color>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishtail</nodeClass>
-                <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+                <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishtail</workerClass>
                 <baseLayer>5</baseLayer>
                 <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>

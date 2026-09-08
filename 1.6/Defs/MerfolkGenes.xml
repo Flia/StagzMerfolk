@@ -267,7 +267,7 @@
             <li Class="StagzMerfolk.PawnRenderNodeProperties_HasDesiccatedGraphics">
                 <debugLabel>Stagz_BodyFin</debugLabel>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishfin</nodeClass>
-                <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+                <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishfin</workerClass>
                 <texPath>Things/Pawn/Humanlike/BodyAttachments/MerfolkFins/fins</texPath>
                 <colorType>Custom</colorType>
                 <color>(0, 126.5, 126.5)</color>
