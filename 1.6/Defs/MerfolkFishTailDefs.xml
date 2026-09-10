@@ -26,7 +26,6 @@
         <biostatMet>-1</biostatMet>
         <biostatCpx>2</biostatCpx>
         <displayOrderInCategory>401</displayOrderInCategory>
-        <bodyType>Standard</bodyType>
         <exclusionTags>
             <li>Fur</li>
         </exclusionTags>
@@ -72,7 +71,6 @@
         <biostatMet>-1</biostatMet>
         <biostatCpx>2</biostatCpx>
         <displayOrderInCategory>402</displayOrderInCategory>
-        <bodyType>Standard</bodyType>
         <exclusionTags>
             <li>Fur</li>
         </exclusionTags>
@@ -276,7 +274,6 @@
             <Male>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Male</Male>
             <Child>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Baby</Child>
             <Baby>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Baby</Baby>
-            <!--The following use placeholder textures-->
             <Hulk>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Hulk</Hulk>
             <Fat>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Fat</Fat>
             <Thin>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Thin</Thin>
