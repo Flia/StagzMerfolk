@@ -25,7 +25,6 @@
         <biostatMet>-2</biostatMet>
         <biostatCpx>2</biostatCpx>
         <displayOrderInCategory>401</displayOrderInCategory>
-        <bodyType>Standard</bodyType>
         <exclusionTags>
             <li>Fur</li>
         </exclusionTags>
@@ -64,7 +63,6 @@
         <biostatMet>-2</biostatMet>
         <biostatCpx>2</biostatCpx>
         <displayOrderInCategory>402</displayOrderInCategory>
-        <bodyType>Standard</bodyType>
         <exclusionTags>
             <li>Fur</li>
         </exclusionTags>
@@ -193,6 +191,9 @@
         <bodyTypeGraphicPaths>
             <Female>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Female</Female>
             <Male>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Male</Male>
+            <Hulk>Things/Pawn/Humanlike/Bodies/MerfolkBodies/hulk</Hulk>
+            <Fat>Things/Pawn/Humanlike/Bodies/MerfolkBodies/fat</Fat>
+            <Thin>Things/Pawn/Humanlike/Bodies/MerfolkBodies/thin</Thin>
             <Child>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Baby</Child>
             <Baby>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Merfolk_Baby</Baby>
         </bodyTypeGraphicPaths>
