@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 // ReSharper disable MemberCanBePrivate.Global
@@ -27,8 +28,14 @@ public static class StagzUtils
         return OverWater(pawn) || IsSubmerged(pawn);
     }
     
-    //Made as a hook for underwater mods
+    //Hook for underwater mods
     public static bool IsSubmerged(this Pawn pawn)
+    {
+        return false;
+    }
+    
+    //Hook for underwater mods
+    public static bool IsSubmerged(this Caravan caravan)
     {
         return false;
     }

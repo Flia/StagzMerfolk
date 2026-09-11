@@ -40,7 +40,8 @@ public class Stagz_Need_Aquatic : Need
     private bool GainingHydration =>
         pawn.OverOrInWater()
         || pawn.InRain()
-        || pawn.health.hediffSet.HasHediff(StagzDefOf.IntheStandaloneHotSpring);
+        || pawn.health.hediffSet.HasHediff(StagzDefOf.IntheStandaloneHotSpring)
+        || IsInCaravanOnWaterFeatures();
     
     public Stagz_Need_Aquatic(Pawn pawn) : base(pawn)
     {
@@ -62,7 +63,7 @@ public class Stagz_Need_Aquatic : Need
         bool isCoastal = tile?.IsCoastal == true;
         bool hasRivers = tile?.Rivers != null && tile.Rivers.Any();
 
-        return isCoastal || hasRivers;
+        return isCoastal || hasRivers || caravan.IsSubmerged();
     }
     public override void NeedInterval()
     {
@@ -86,7 +87,7 @@ public class Stagz_Need_Aquatic : Need
         }
     }
 
-    protected override bool IsFrozen => base.IsFrozen || pawn.Deathresting || IsInCaravanOnWaterFeatures();
+    protected override bool IsFrozen => base.IsFrozen || pawn.Deathresting;
 
     public override int GUIChangeArrow
     {
