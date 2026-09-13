@@ -15,6 +15,7 @@
         <selectable>true</selectable>
         <pathCost>14</pathCost>
         <plant>
+            <forceIsTree>false</forceIsTree>
             <fertilityMin>0</fertilityMin>
             <fertilitySensitivity>0</fertilitySensitivity>
             <growMinGlow>0.3</growMinGlow>
