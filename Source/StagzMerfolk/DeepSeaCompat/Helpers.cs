@@ -1,6 +1,6 @@
 using System;
+using System.Reflection;
 using HarmonyLib;
-using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
@@ -9,29 +9,28 @@ namespace StagzMerfolk.DeepSeaCompat;
 [StaticConstructorOnStartup]
 public static class Helpers
 {
-    private static readonly bool DeepSeaActive;
     private static readonly Func<Pawn, bool> submergedDelegate;
-    private static readonly PlanetLayerDef oceanLayer = DefDatabase<PlanetLayerDef>.GetNamed("HDS_Layer_Ocean");
+    private static readonly Func<PlanetTile, bool> oceanTileDelegate;
+
     static Helpers()
     {
-        DeepSeaActive = ModLister.AnyModActiveNoSuffix(["horizons.deepsea"]);
-        if (DeepSeaActive)
-        {
-            submergedDelegate = (Func<Pawn, bool>)AccessTools
-                .Method("horizons.deepsea.Api.HorizonsDeepseaApi:IsPawnSubmerged")
-                .CreateDelegate(typeof(Func<Pawn, bool>));
-            if (submergedDelegate is null)
-            {
-                Log.Error("StagzMerfolk: DeepSea is active, but submergedDelegate failed to fetch");
-            }
-        }
+        if (!ModLister.AnyModActiveNoSuffix(["horizons.deepsea"])) return;
+        submergedDelegate = Bind<Func<Pawn, bool>>("IsPawnSubmerged");
+        oceanTileDelegate = Bind<Func<PlanetTile, bool>>("IsUnderwaterTile");
     }
-    public static bool IsSubmerged(this Pawn pawn) => DeepSeaActive && submergedDelegate(pawn);
 
-    public static bool IsSubmerged(this Caravan caravan)
+    private static T Bind<T>(string name) where T : class
     {
-        if (oceanLayer == null) return false;
-        var tile = Find.WorldGrid[caravan.Tile] as SurfaceTile;
-        return tile?.Layer.Def == oceanLayer;
+        MethodInfo method = AccessTools.Method($"horizons.deepsea.Api.HorizonsDeepseaApi:{name}");
+        if (method != null) return Delegate.CreateDelegate(typeof(T), method) as T;
+
+        Log.Error($"StagzMerfolk: DeepSea is active, but {name} could not be bound");
+        return null;
     }
+
+    public static bool IsSubmerged(this Pawn pawn) =>
+        submergedDelegate != null && submergedDelegate(pawn);
+
+    public static bool IsSubmerged(this Caravan caravan) =>
+        oceanTileDelegate != null && caravan != null && oceanTileDelegate(caravan.Tile);
 }
