@@ -31,13 +31,13 @@ public static class StagzUtils
     //Hook for underwater mods
     public static bool IsSubmerged(this Pawn pawn)
     {
-        return false;
+        return DeepSeaCompat.Helpers.IsSubmerged(pawn);
     }
     
     //Hook for underwater mods
     public static bool IsSubmerged(this Caravan caravan)
     {
-        return false;
+        return DeepSeaCompat.Helpers.IsSubmerged(caravan);
     }
 
     public static bool InRiver(this Pawn pawn)

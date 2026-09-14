@@ -15,5 +15,6 @@
         <li IfModActive="Ludeon.RimWorld.Royalty">1.6/LoadFolders/Royalty</li>
         <li IfModActive="Ludeon.RimWorld.Ideology">1.6/LoadFolders/Ideology</li>
         <li IfModActive="VanillaExpanded.VPlantsEMore,royallyTipsy.PanaquaticZone">1.6/LoadFolders/AquaticZoneMods</li>
+        <li IfModActive="horizons.deepsea">1.6/LoadFolders/DeepSea</li>
     </v1.6>
 </loadFolders>
