@@ -77,7 +77,7 @@
                 <muteWhenPaused>True</muteWhenPaused>
                 <grains>
                     <li Class="AudioGrain_Folder">
-                        <clipFolderPath>Pawn/Abilities/DeepDive</clipFolderPath>
+                        <clipFolderPath>StagzMerfolk/Pawn/Abilities/DeepDive</clipFolderPath>
                     </li>
                 </grains>
                 <volumeRange>70</volumeRange>
@@ -94,7 +94,7 @@
                 <muteWhenPaused>True</muteWhenPaused>
                 <grains>
                     <li Class="AudioGrain_Folder">
-                        <clipFolderPath>Pawn/Abilities/SirenSong</clipFolderPath>
+                        <clipFolderPath>StagzMerfolk/Pawn/Abilities/SirenSong</clipFolderPath>
                     </li>
                 </grains>
                 <volumeRange>70~100</volumeRange>

@@ -9,7 +9,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Pawn/Abilities/SirenSong/StagzMerfolk_Siren_Song4</clipPath>
+                        <clipPath>StagzMerfolk/Pawn/Abilities/SirenSong/Siren_Song4</clipPath>
                     </li>
                 </grains>
                 <volumeRange>70~100</volumeRange>
@@ -28,7 +28,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Pawn/Abilities/SirenSong/StagzMerfolk_Siren_Song5</clipPath>
+                        <clipPath>StagzMerfolk/Pawn/Abilities/SirenSong/Siren_Song5</clipPath>
                     </li>
                 </grains>
                 <volumeRange>70~100</volumeRange>
@@ -47,7 +47,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Pawn/Abilities/SirenSong/StagzMerfolk_Siren_Song6</clipPath>
+                        <clipPath>StagzMerfolk/Pawn/Abilities/SirenSong/Siren_Song6</clipPath>
                     </li>
                 </grains>
                 <volumeRange>70~100</volumeRange>
@@ -64,7 +64,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Pawn/Abilities/DeepDive/StagzMerfolk_Deepdive</clipPath>
+                        <clipPath>StagzMerfolk/Pawn/Abilities/DeepDive/Deepdive</clipPath>
                     </li>
                 </grains>
                 <volumeRange>20~40</volumeRange>
@@ -80,7 +80,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Pawn/Abilities/DeepDive/StagzMerfolk_Deepdive2</clipPath>
+                        <clipPath>StagzMerfolk/Pawn/Abilities/DeepDive/Deepdive2</clipPath>
                     </li>
                 </grains>
                 <volumeRange>20~40</volumeRange>
