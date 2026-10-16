@@ -11,12 +11,16 @@ public class PawnRenderNode_ColoredFinEars(Pawn pawn, PawnRenderNodeProperties p
     private new PawnRenderNodeProperties_HasDesiccatedGraphics Props => props as PawnRenderNodeProperties_HasDesiccatedGraphics;
     public override Graphic GraphicFor(Pawn pawn)
     {
+        Shader shader = pawn.story.SkinColorOverriden
+            ? StagzDefOf.ScalyGenes.Shader 
+            : StagzDefOf.ScalyGenesWithSkinShader.Shader;
+        
         switch (pawn.Drawer.renderer.CurRotDrawMode)
         {
             case RotDrawMode.Fresh:
                 return GraphicDatabase.Get<Graphic_Multi>(
                     Props.texPath,
-                    StagzDefOf.ScalyGenes.Shader,
+                    shader,
                     Vector2.one,
                     pawn.story?.SkinColor ?? Color.white,
                     ColorFor(pawn)
@@ -24,7 +28,7 @@ public class PawnRenderNode_ColoredFinEars(Pawn pawn, PawnRenderNodeProperties p
             case RotDrawMode.Rotting:
                 return GraphicDatabase.Get<Graphic_Multi>(
                     Props.texPath,
-                    StagzDefOf.ScalyGenes.Shader,
+                    shader,
                     Vector2.one,
                     PawnRenderUtility.GetRottenColor(pawn.story?.SkinColor ?? Color.white),
                     ColorFor(pawn)

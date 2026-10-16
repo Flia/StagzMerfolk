@@ -4,11 +4,24 @@
         <defName>ScalyGenes</defName>
         <shaderPath>StagzMerfolk/ScalyGenes</shaderPath>
     </ShaderTypeDef>
-
     <ShaderDef>
         <defName>ScalyGenes</defName>
         <shaderProgram>
             <fragmentShaderFileName>ScalyGenes.frag.glsl</fragmentShaderFileName>
+            <transparent>true</transparent>
+            <depthWrite>true</depthWrite>
+            <renderQueue>2900</renderQueue>
+        </shaderProgram>
+    </ShaderDef>
+
+    <ShaderTypeDef>
+        <defName>ScalyGenesWithSkinShader</defName>
+        <shaderPath>StagzMerfolk/ScalyGenesWithSkinShader</shaderPath>
+    </ShaderTypeDef>
+    <ShaderDef>
+        <defName>ScalyGenesWithSkinShader</defName>
+        <shaderProgram>
+            <fragmentShaderFileName>ScalyGenesWithSkinShader.frag.glsl</fragmentShaderFileName>
             <transparent>true</transparent>
             <depthWrite>true</depthWrite>
             <renderQueue>2900</renderQueue>

@@ -43,6 +43,7 @@ public class StagzDefOf
     public static StyleCategoryDef GM_Ocean;
 
     public static ShaderTypeDef ScalyGenes;
+    public static ShaderTypeDef ScalyGenesWithSkinShader;
     
     public static MentalStateDef GiveUpExit;
     public static HediffDef Stagz_Infatuated;
