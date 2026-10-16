@@ -79,6 +79,7 @@ public class CompSpawnerFromThingSetOnWater : ThingComp
             return $"{"NextSpawnedResourceIn".Translate()}: {ticksUntilSpawn.ToStringTicksToPeriod().Colorize(ColoredText.DateTimeColor)}";
         }
     }
+    //todo: add enter/exit node
     public override void PostExposeData()
     {
         Scribe_Values.Look(ref ticksUntilSpawn, "ticksUntilSpawn");

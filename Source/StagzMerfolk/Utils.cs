@@ -9,7 +9,7 @@ namespace StagzMerfolk;
 
 //TODO: should convert to extensions block and maybe rename to StagzExtensions sometime
 //don't forget to nullcheck "this" when adding an extension method
-public static class StagzUtils
+public static class Utils
 {
     public static bool InRain(this Pawn pawn)
     {

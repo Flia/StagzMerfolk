@@ -4,7 +4,7 @@ using Verse;
 namespace StagzMerfolk;
 
 [StaticConstructorOnStartup]
-public static class StagzAssets
+public static class Assets
 {
     public static readonly Texture2D DyeDialogRotatePawn = ContentFinder<Texture2D>.Get("StagzMerfolk/UI/Buttons/DyeDialogRotatePawn");
 }

@@ -162,7 +162,7 @@ public class Dialog_ColorPickerForGenesWithScales : Window
 			RectDivider RotateButtonDivider = layout.NewRow(RotateButtonDimensions);
 			RotateButtonDivider.NewRow(ColorIconSizeWithPadding / 2f);
 			RotateButtonDivider = RotateButtonDivider.NewCol((RotateButtonDivider.Rect.width + RotateButtonDimensions) / 2, HorizontalJustification.Right);
-			if (Widgets.ButtonImage(RotateButtonDivider.NewCol(RotateButtonDimensions), StagzAssets.DyeDialogRotatePawn))
+			if (Widgets.ButtonImage(RotateButtonDivider.NewCol(RotateButtonDimensions), Assets.DyeDialogRotatePawn))
 			{
 				portraitRotation.Rotate(RotationDirection.Counterclockwise);
 			}
