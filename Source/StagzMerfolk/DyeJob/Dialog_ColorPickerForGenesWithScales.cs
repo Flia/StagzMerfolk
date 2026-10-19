@@ -54,19 +54,19 @@ public class Dialog_ColorPickerForGenesWithScales : Window
 	    //if canceled
 	    if (!accepted)
 	    {
-		    pawn.TrySetMerrenScaleColor(oldColor);
+		    pawn.MerrenScaleColor = oldColor;
 		    return;
 	    }
 	    //if devmode gizmo
 	    if (parentOfComp is null)
 	    {
-		    pawn.TrySetMerrenScaleColor(color);
+		    pawn.MerrenScaleColor = color;
 		    return;
 	    }
 	    //if accepted with new color
 	    if (color != oldColor)
 	    {
-		    pawn.TrySetMerrenScaleColor(oldColor);
+		    pawn.MerrenScaleColor = oldColor;
 		    pawn.genes?.GetFirstGeneOfType<Gene_WithScaleColor>()?.PendingColor = color;
 		    if (parentOfComp.def == ThingDefOf.Dye && !parentOfComp.IsForbidden(pawn) && pawn.CanReserve(parentOfComp, 1, 1))
 		    {
@@ -154,7 +154,7 @@ public class Dialog_ColorPickerForGenesWithScales : Window
 			Widgets.ColorTextfields(ref aggregator, ref color, ref textfieldBuffers, ref textfieldColorBuffer, previousFocusedControlName, "colorTextfields");
 			
 			//Updating it here, before we draw the pawn
-			if (currentColor != color) pawn.TrySetMerrenScaleColor(color);
+			if (currentColor != color) pawn.MerrenScaleColor = color;
 			
 			
 			//Left panel - mainly pawn preview - thus uses "layout" as rect again

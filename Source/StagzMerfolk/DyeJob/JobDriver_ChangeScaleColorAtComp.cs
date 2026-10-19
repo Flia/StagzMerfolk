@@ -44,7 +44,7 @@ public class JobDriver_ChangeScaleColorAtComp : JobDriver
 
             if (pawn.genes?.GetFirstGeneOfType<Gene_WithScaleColor>()?.PendingColor is { } pendingColor)
             {
-                pawn.TrySetMerrenScaleColor(pendingColor);
+                pawn.MerrenScaleColor = pendingColor;
                 //may not be resetting properly to null after being used, but right now it doesn't matter
                 pawn.genes.GetFirstGeneOfType<Gene_WithScaleColor>()?.PendingColor = null;
             }

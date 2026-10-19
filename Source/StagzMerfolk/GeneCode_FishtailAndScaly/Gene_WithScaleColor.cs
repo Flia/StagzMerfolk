@@ -17,13 +17,12 @@ public class Gene_WithScaleColor : Gene
         new Color32(212, 76, 73, 255),     // salmon
     ];
     private Color? _chosenColor;
-    
-    public Color ChosenColor
+    public Color? ChosenColor
     {
         get
         {
             _chosenColor ??= pawn?.genes?.GetFirstGeneOfType<Gene_WithScaleColor>()?._chosenColor ?? defaultColors.RandomElement(); 
-            return (Color) _chosenColor;
+            return _chosenColor;
         }
         set
         {

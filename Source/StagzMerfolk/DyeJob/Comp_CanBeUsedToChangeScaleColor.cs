@@ -9,7 +9,7 @@ public class Comp_CanBeUsedToChangeScaleColor: ThingComp
 {
     public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
     {
-        if (selPawn.TryGetMerrenScaleColor() == null)
+        if (selPawn.MerrenScaleColor == null)
         {
             yield break;
         }
