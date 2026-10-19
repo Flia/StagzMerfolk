@@ -2,49 +2,49 @@ This mod adds two merfolk inspired xenotypes. Inspired by tales of mermaids and 
     
 This mod adds new genes that interact with water, new abilities themed around water or being in water, a new focus type for psycasters, a cute new squid dryad that has a special interaction with water, and (if VPE:More Plants is installed) new waterborne plants.
 
- [img]https://i.imgur.com/zDE6j0A.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/01-Genes.png[/img]
 
- [img]https://i.imgur.com/xV8lvCs.png[/img] 
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/02-Aquatic.png[/img] 
 
- [img]https://i.imgur.com/Q3sG1YD.png[/img] 
-[b]The tail colour is randomly decided when the pawn is first generated[/b]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/03-Fishtail.png[/img] 
+[b]The tail color is randomly decided when the pawn is first generated[/b]
 
- [img]https://i.imgur.com/oapTjJA.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/04-SirenSong.png[/img]
 
- [img]https://i.imgur.com/xyPypbx.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/05-Raincaller.png[/img]
 
- [img]https://i.imgur.com/bIEhXSA.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/06-SwiftSwim.png[/img]
 
- [img]https://i.imgur.com/4Gis8kz.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/07-RainVeil.png[/img]
 
- [img]https://i.imgur.com/yysKQVl.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/08-NaturallyNimble.png[/img]
 
- [img]https://i.imgur.com/y6uioAf.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/09-WebbedHands.png[/img]
 
- [img]https://i.imgur.com/N0aJwl8.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/10-PelvicFins.png[/img]
 
- [img]https://i.imgur.com/jpoM4Dk.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/11-FinEars.png[/img]
 
- [img]https://i.imgur.com/Fe5pADg.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/12-Charming.png[/img]
 
- [img]https://i.imgur.com/n8Cw2wO.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/13-KeenReflex.png[/img]
 
- [img]https://i.imgur.com/SCV5rhQ.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/14-Xenotype.png[/img]
 
- [img]https://i.imgur.com/ABHjOJm.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/15-CoastalMerren.png[/img]
 
- [img]https://i.imgur.com/GX3vlFy.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/16-AbyssalMerren.png[/img]
 
- [img]https://i.imgur.com/ZtHgNXL.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/17-MiscContent.png[/img]
 
-[img]https://i.imgur.com/vBHHX7X.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/18-Plants.png[/img]
 
- [img]https://i.imgur.com/kaVfYto.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/19-Dryad.png[/img]
 
- [img]https://i.imgur.com/nqiCQhY.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/20-IncidentsAndWaterFocus.png[/img]
 [b]*Watermill is a non-seethrough building. In vanilla rimworld buildings like this will block the green linking line for meditation object. If you don't see the line, don't worry, we tested and it works just fine![/b]
 
- [img]https://i.imgur.com/yLufVeY.png[/img]
+ [img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/21-QnA.png[/img]
 
 Q: I spot a bug! Can I leave some feedback & suggestion?
 A: Yes. Feedback are welcomed. This mod is a commissioned result and brought to you by a small team of coder and artists. 
@@ -63,9 +63,9 @@ A: Synergy for DBH is now added. Player wish to use this function will have to m
 Q: Why do you add 'charming' and 'keen reflex' genes when they are not used by either of the races?
 A: They were originally designed for them but was scrapped for balance reason. I figured they are still useful for general use. You can use them to make your own succubus xenotype or melee super soldier etc.
 
-Q: I want my own colour of fishtail, how'd I do that?
+Q: I want my own color of fishtail, how'd I do that?
 A:  You can edit it in xml, even using a notepad like me. Here is a image example of the template
-[img]https://i.imgur.com/tnnZdzm.png[/img] 
+[img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/22-CustomTailXMLSample.png[/img] 
 
 Q: Why is the cover art a man? Where is my mermaid waifu?
 A: Because I like men. Female models are included and you are free to play the way you want.
@@ -73,7 +73,7 @@ A: Because I like men. Female models are included and you are free to play the w
 Q: This is a series? Are you planning to make more race mods?
 A: Yes I am. Although I am merely a commissioner and the publish of next mod will greatly depends on the availability of coder/artist. We are currently making a mushroom + snail race mod that expands on spore abilities and syncretic evolution. I hope they could meet you soon!
 
-[img]https://i.imgur.com/5MfxVxn.png[/img]
+[img]https://raw.githubusercontent.com/Goji-2337/StagzMerfolk/master/ModPage/23-Credit.png[/img]
 
 Arquebus - both xml and C# coding
 pphhyy - original merfolk models: Male, Female, and Child
