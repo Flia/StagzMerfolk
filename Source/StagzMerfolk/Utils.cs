@@ -16,6 +16,11 @@ public static class Utils
         //GetTerrain can never be null. Defaults to soil
         public bool OverWater() => pawn?.Map != null && pawn.Position.GetTerrain(pawn.Map).IsWater;
         public bool OverOrInWater() => pawn.OverWater() || pawn.IsSubmerged();
+        public bool IsInCaravanOnWaterFeatures() =>
+            pawn.IsCaravanMember() 
+            && pawn.GetCaravan() is { } caravan 
+            && (Find.WorldGrid[caravan.Tile] is SurfaceTile tile && (tile.IsCoastal || tile.Rivers is [_, ..]) 
+                || Find.WorldGrid[caravan.Tile].IsSubmerged());
         public Color GetMerrenScaleColorOrFailsafe() => pawn.MerrenScaleColor ?? pawn?.story?.HairColor ?? Color.white;
         public Color? MerrenScaleColor
         {
@@ -55,15 +60,5 @@ public static class Utils
             List<BodyPartGroupDef> LegsOrFeetGroups = [BodyPartGroupDefOf.Legs, StagzDefOf.Feet];
             return bodyPartGroups?.Any(group => !LegsOrFeetGroups.Contains(group)) == true;
         }
-    }
-    
-    public static bool IsSubmerged(this Pawn pawn)
-    {
-        return false;
-    }
-    
-    public static bool IsSubmerged(this Caravan caravan)
-    {
-        return false;
     }
 }

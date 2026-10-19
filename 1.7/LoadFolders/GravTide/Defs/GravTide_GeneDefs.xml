@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <GeneDef>
+        <defName>Stagz_MerfolkAdaptation</defName>
+        <label>underwater adaptation</label>
+        <description>Carriers of this gene are perfectly adapted to life in the ocean depths. Their archite-enhanced bodies allow them to thrive where lack of oxygen or extreme pressure would kill others.</description>
+        <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_SwiftSwim</iconPath> <!-- todo: does fit but could use better icon -->
+        <displayCategory>Archite</displayCategory>
+
+        <!-- 
+        Usage note: setting a prereq only forbids it from generation without Aquatic in the same set.
+        It does not prevent the stats from applying if the gene ends up on a pawn in bypass of vanilla locks, either due to devmode or due to potential modded interactions.
+        Writing statAffector to lock it would be trivial, but I decided I don't have a good enough reason, at least yet.
+        Potential idea stolen from Aelanna: make the gene weaken when used on a race other than Merren. Not gonna try it right now either but want to stash it Just In Case.
+        -->
+        <prerequisite>Stagz_Aquatic</prerequisite>
+        <statOffsets>
+            <GravTide_WaterBreathing>1.0</GravTide_WaterBreathing>
+            <GravTide_WaterInsulation>0.8</GravTide_WaterInsulation>
+            <GravTide_PressureAcclimation>1.5</GravTide_PressureAcclimation>
+            <GravTide_MaxPressure>70</GravTide_MaxPressure>
+        </statOffsets>
+        <displayOrderInCategory>500</displayOrderInCategory> <!-- todo -->
+        <biostatCpx>3</biostatCpx>
+        <biostatArc>1</biostatArc>
+    </GeneDef>
+</Defs>

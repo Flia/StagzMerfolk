@@ -20,7 +20,8 @@ public class StorytellerComp_Ariel : StorytellerComp
     //Split into its own func so I can pull it through debug
     public void FindCellAndPassToWorker(Pawn pawn, bool debug = false)
     {
-        IntVec3 waterCell = CellFinder.StandableCellNear(pawn.Position, pawn.Map, 11.9f, c => !c.Fogged(pawn.Map) && pawn.Map.terrainGrid.TerrainAt(c).IsWater && c != pawn.Position);
+        IntVec3 waterCell = CellFinder.StandableCellNear(pawn.Position, pawn.Map, 11.9f, 
+            c => !c.Fogged(pawn.Map) && c != pawn.Position && (pawn.Map.terrainGrid.TerrainAt(c).IsWater || c.IsSubmerged(pawn.Map)));
         
         if (waterCell != IntVec3.Invalid || debug)
         {

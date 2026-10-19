@@ -1,7 +1,6 @@
 using System;
 using JetBrains.Annotations;
 using RimWorld;
-using RimWorld.Planet;
 using Verse;
 
 namespace StagzMerfolk;
@@ -40,30 +39,12 @@ public class Need_Aquatic : Need
     private bool GainingHydration =>
         pawn.OverOrInWater()
         || pawn.InRain()
-        || pawn.health.hediffSet.HasHediff(StagzDefOf.IntheStandaloneHotSpring)
-        || IsInCaravanOnWaterFeatures();
+        || pawn.IsInCaravanOnWaterFeatures()
+        || pawn.HasModdedConditionRestoringAquaticNeed();
     
     public Need_Aquatic(Pawn pawn) : base(pawn)
     {
         threshPercents = [0.1f];
-    }
-    private bool IsInCaravanOnWaterFeatures()
-    {
-        if (!pawn.IsCaravanMember())
-        {
-            return false;
-        }
-
-        var caravan = pawn.GetCaravan();
-        if (caravan == null)
-        {
-            return false;
-        }
-        var tile = Find.WorldGrid[caravan.Tile] as SurfaceTile;
-        bool isCoastal = tile?.IsCoastal == true;
-        bool hasRivers = tile?.Rivers != null && tile.Rivers.Any();
-
-        return isCoastal || hasRivers || caravan.IsSubmerged();
     }
     public override void NeedInterval()
     {
@@ -80,7 +61,9 @@ public class Need_Aquatic : Need
             CurLevel -= BaseFallRatePerInterval * FallFactor;
         }
         if (Dehydrating)
+        {
             HealthUtility.AdjustSeverity(pawn, StagzDefOf.Stagz_Dehydration, 20 * BaseFallRatePerInterval);
+        }
         else
         {
             HealthUtility.AdjustSeverity(pawn, StagzDefOf.Stagz_Dehydration, -20 * BaseGainRatePerInterval);

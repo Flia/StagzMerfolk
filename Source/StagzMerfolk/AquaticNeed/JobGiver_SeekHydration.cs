@@ -9,16 +9,15 @@ public class JobGiver_SeekHydration : ThinkNode_JobGiver
     {
         if (pawn.needs.TryGetNeed(StagzDefOf.Stagz_NeedAquatic) != null && pawn.health.hediffSet.HasHediff(StagzDefOf.Stagz_Dehydration))
         {
-            if (pawn.Map.terrainGrid.TerrainAt(pawn.Position).IsWater)
+            if (pawn.Map.terrainGrid.TerrainAt(pawn.Position).IsWater || pawn.Position.IsSubmerged(pawn.Map))
             {
                 return JobMaker.MakeJob(StagzDefOf.Stagz_Wait_Hydrate, 500, true);
             }
             
-            
-            Region region = ClosestRegionWithWaterTile(pawn.Position, pawn.Map, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.ByPawn, false, false, false), RegionType.Set_Passable);
+            Region region = ClosestRegionWithWaterTile(pawn.Position, pawn.Map, TraverseParms.For(pawn));
             if (region != null)
             {
-                return JobMaker.MakeJob(StagzDefOf.Stagz_GotoWaterCell, region.Cells.FirstOrFallback(c => pawn.Map.terrainGrid.TerrainAt(c).IsWater));
+                return JobMaker.MakeJob(StagzDefOf.Stagz_GotoWaterCell, region.Cells.FirstOrFallback(c => pawn.Map.terrainGrid.TerrainAt(c).IsWater || c.IsSubmerged(pawn.Map)));
             }
         }
         
@@ -53,7 +52,7 @@ public class JobGiver_SeekHydration : ThinkNode_JobGiver
 
             foreach (IntVec3 c in r.Cells)
             {
-                if (map.terrainGrid.TerrainAt(c).IsWater)
+                if (map.terrainGrid.TerrainAt(c).IsWater || c.IsSubmerged(map))
                 {
                     foundReg = r;
                     return true;

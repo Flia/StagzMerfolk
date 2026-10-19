@@ -14,6 +14,7 @@
         <DebugType>embedded</DebugType>
         <Configurations>Release</Configurations>
         <Platforms>AnyCPU</Platforms>
+        <DocumentationFile>..\..\$(_RimWorldVersion)\Assemblies\StagzMerfolk.xml</DocumentationFile>
     </PropertyGroup>
     
         <!--
