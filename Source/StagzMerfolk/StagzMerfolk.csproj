@@ -6,8 +6,9 @@
         <RootNamespace>StagzMerfolk</RootNamespace>
         <AssemblyName>StagzMerfolk</AssemblyName>
         <LangVersion>latest</LangVersion>
+        <!-- reminder that if I forget what any of these mean or what their defaults are I can check
+        https://learn.microsoft.com/en-us/dotnet/core/project-sdk/msbuild-props -->
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
         <GenerateDependencyFile>false</GenerateDependencyFile>
         <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
         <OutputPath>..\..\$(_RimWorldVersion)\Assemblies\</OutputPath>
@@ -50,7 +51,7 @@
     </ItemGroup>
     
     <ItemGroup>
-        <PackageReference Include="Lib.Harmony" Version="3.*-*" />
+        <PackageReference Include="Lib.Harmony.Ref" Version="3.*-*" />
     </ItemGroup>
 
     <!-- Peak noob code. I am horrified and disgusted this was written by my hand. I should contemplate honorable sudoku to cleanse this stain.

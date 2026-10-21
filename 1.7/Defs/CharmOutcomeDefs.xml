@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+    <!-- for all of them: keep in mind that currently my code removes records older than 15 days, as a failsafe mechanism -->
+    <!-- original creeps have consequences trigger at 9~30, decided to make it shorter for mine -->
+    
     <StagzMerfolk.CharmOutcomeDef>
         <defName>Stagz_Trustworthy</defName>
         <label>trustworthy</label>
@@ -11,7 +14,6 @@
         <label>leaves</label>
         <weight>1</weight>
         <workerClass>StagzMerfolk.CharmOutcomeWorker_Depart</workerClass>
-        <!-- original creeps had it at 9~30, decided to make it shorter -->
         <triggersAfterDays>7~15</triggersAfterDays>
     </StagzMerfolk.CharmOutcomeDef>
 
@@ -20,7 +22,6 @@
         <label>aggressive</label>
         <weight>1</weight>
         <workerClass>StagzMerfolk.CharmOutcomeWorker_Aggressive</workerClass>
-        <!-- original creeps had it at 9~30, decided to make it shorter -->
         <triggersAfterDays>7~15</triggersAfterDays>
         <canOccurWhenImprisoned>true</canOccurWhenImprisoned>
     </StagzMerfolk.CharmOutcomeDef>

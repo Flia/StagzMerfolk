@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System.Reflection;
+using HarmonyLib;
 using JetBrains.Annotations;
 using UnityEngine;
 using Verse;
@@ -12,9 +13,10 @@ namespace StagzMerfolk;
 
         public StagzMerfolk(ModContentPack content) : base(content)
         {
+            //for the last time tipsy, this line is load-bearing, mod won't load already saved settings without it!
             settings = GetSettings<StagzMerfolkSettings>();
-            var harmony = new Harmony("com.arquebus.rimworld.mod.stagzmerfolk");
-            harmony.PatchAll();
+            
+            new Harmony("com.arquebus.rimworld.mod.stagzmerfolk").PatchAll(Assembly.GetExecutingAssembly());
         }
 
         public override void DoSettingsWindowContents(Rect inRect)

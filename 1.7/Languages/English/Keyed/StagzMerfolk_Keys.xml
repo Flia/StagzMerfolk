@@ -18,10 +18,6 @@
     
     <StagzMerfolk_UnlockedByGene>Has gene:</StagzMerfolk_UnlockedByGene>
 
-    <StagzMerfolk_KeenReflexes>Keen Reflexes</StagzMerfolk_KeenReflexes>
-    <StagzMerfolk_KeenReflexes_Value>Melee dodge applies to ranged attacks</StagzMerfolk_KeenReflexes_Value>
-    <StagzMerfolk_KeenReflexes_Description>Converts melee dodge chance to ranged dodge chance at 1:1 ratio</StagzMerfolk_KeenReflexes_Description>
-    
     <StagzMerfolk_StatsReport_Powered>Powered</StagzMerfolk_StatsReport_Powered>
     <StagzMerfolk_StatsReport_Powering>Moving</StagzMerfolk_StatsReport_Powering>
     <StagzMerfolk_MeditationFocusPerHydroponicsBasinAbstract>{1} per nearby powered hydroponics (up to {0})</StagzMerfolk_MeditationFocusPerHydroponicsBasinAbstract>
@@ -33,7 +29,6 @@
     <StagzMerfolk_DehydrationPrisoners>Skin dehydration (prisoners)</StagzMerfolk_DehydrationPrisoners>
     <StagzMerfolk_DehydrationPrisonersDesc>These prisoners are aquatic but have been out of water for too long:\n{0}\n\nIf left unaddressed, dehydration will eventually kill them. Get them to water. Even a toxic puddle is fine.</StagzMerfolk_DehydrationPrisonersDesc>
     
-    <StagzMerfolk_UI_GeneticColor>genetic color</StagzMerfolk_UI_GeneticColor>
     <StagzMerfolk_FloatMenu_ChangeMerrenScaleColor>change scale color</StagzMerfolk_FloatMenu_ChangeMerrenScaleColor>
     <StagzMerfolk_FloatMenu_NoReachableDye>no reachable dye</StagzMerfolk_FloatMenu_NoReachableDye>
 

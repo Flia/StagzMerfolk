@@ -10,6 +10,9 @@ public class GameComp_CharmTracker : GameComponent
 {
     public GameComp_CharmTracker(Game game) { }
 
+    //todo: possible problem with cache invalidation when loading then quitting to main menu
+    //on another load with existing list loads the correct cache so *seems* harmless
+    //problem for future tipsy, idk how to set it up rn
     public static List<CharmedPawnRecord> pawnsWithPendingConsequences = [];
     public override void GameComponentTick()
     {
@@ -23,16 +26,17 @@ public class GameComp_CharmTracker : GameComponent
             Pawn pawn = record.pawn;
                 
             //check for faulty records
-            if (pawn == null || pawn.Dead || pawn.everLostEgo || Find.TickManager.TicksGame - record.triggerConsequenceTick > 15 * GenDate.TicksPerDay)
+            if (pawn == null || record.outcomeDef == null || pawn.Dead || pawn.everLostEgo 
+                || Find.TickManager.TicksGame - record.triggerConsequenceTick > 15 * GenDate.TicksPerDay)
             {
                 pawnsWithPendingConsequences.Remove(record);
                 continue;
             }
+            
             //delay consequences for pawns which cannot execute them right now
-            if (!pawn.Spawned) continue;
-            if (pawn.Downed) continue;
-            if (pawn.InMentalState) continue;
+            if (!pawn.Spawned || pawn.Downed || pawn.InMentalState) continue;
             if (!record.outcomeDef.canOccurWhenImprisoned && (pawn.IsPrisoner || pawn.IsSlave)) continue;
+            
             record.outcomeDef.Worker.DoOutcome(pawn);
             pawnsWithPendingConsequences.Remove(record);
         }
