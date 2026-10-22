@@ -36,7 +36,7 @@ public class PawnRenderNode_Fishtail(Pawn pawn, PawnRenderNodeProperties props, 
             case RotDrawMode.Rotting:
                 return GraphicDatabase.Get<Graphic_Multi>(
                     pawn.story?.furDef.GetFurBodyGraphicPath(pawn),
-                    shader,
+                    StagzDefOf.ScalyGenes.Shader,
                     Vector2.one,
                     PawnRenderUtility.GetRottenColor(skinColor),
                     ColorFor(pawn)
