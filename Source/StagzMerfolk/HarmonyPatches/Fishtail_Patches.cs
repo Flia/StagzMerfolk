@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -45,6 +46,21 @@ public static class FishtailPatch_PawnTechHediffsGenerator
         {
             pawn.health.RestorePart(leg, null, false);
             pawn.health.AddHediff(StagzDefOf.Stagz_Tail, leg);
+        }
+    }
+}
+
+//fix for vanilla bug which otherwise makes statue's fakePawn merren be created as downed, leading to error spam
+[HarmonyPatch(typeof(CompStatue), "InitFakePawn_HookForMods")]
+public static class FishtailPatch_CompStatue
+{
+    private static readonly AccessTools.FieldRef<Pawn_HealthTracker, PawnHealthState> healthStateRef =
+        AccessTools.FieldRefAccess<Pawn_HealthTracker, PawnHealthState>("healthState");
+    public static void Postfix(Pawn fakePawn, Dictionary<string, object> additionalSavedPawnDataForMods)
+    {
+        if (fakePawn?.health?.Downed == true)
+        {
+            healthStateRef(fakePawn.health) = PawnHealthState.Mobile;
         }
     }
 }

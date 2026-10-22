@@ -9,37 +9,27 @@ public class PawnRenderNode_ColoredFinEars(Pawn pawn, PawnRenderNodeProperties p
     : PawnRenderNode_AttachmentHead(pawn, props, tree)
 {
     public override Graphic GraphicFor(Pawn pawn)
-    {
-        Shader shader = pawn.story.SkinColorOverriden
-            ? StagzDefOf.ScalyGenes.Shader 
-            : StagzDefOf.ScalyGenesWithSkinShader.Shader;
-        
-        switch (pawn.Drawer.renderer.CurRotDrawMode)
-        {
-            case RotDrawMode.Fresh:
-                return GraphicDatabase.Get<Graphic_Multi>(
-                    Props.texPath,
-                    shader,
-                    Vector2.one,
-                    pawn.story?.SkinColor ?? Color.white,
-                    ColorFor(pawn)
-                );
-            case RotDrawMode.Rotting:
-                return GraphicDatabase.Get<Graphic_Multi>(
-                    Props.texPath,
-                    shader,
-                    Vector2.one,
-                    PawnRenderUtility.GetRottenColor(pawn.story?.SkinColor ?? Color.white),
-                    ColorFor(pawn)
-                );
-            case RotDrawMode.Dessicated:
-            default:
-                return base.GraphicFor(pawn);
-        }
+    { 
+        return GraphicDatabase.Get<Graphic_Multi>(
+            Props.texPath, 
+            ThisShouldveBeenJustOverridden_ShaderFor(pawn), 
+            Vector2.one, 
+            ColorFor(pawn), 
+            pawn.Drawer.renderer.StatueColor ?? pawn.GetMerrenScaleColorOrFailsafe());
     }
-
-    public override Color ColorFor(Pawn pawn)
+    
+    private Shader ThisShouldveBeenJustOverridden_ShaderFor(Pawn pawn)
     {
-        return pawn.GetMerrenScaleColorOrFailsafe();
+        Shader shader = ShaderFor(pawn);
+        if (shader == ShaderDatabase.CutoutSkin)
+        {
+            return StagzDefOf.ScalyGenesWithSkinShader.Shader;
+        }
+        if (shader == ShaderDatabase.CutoutSkinColorOverride || shader == ShaderDatabase.Cutout)
+        {
+            return StagzDefOf.ScalyGenes.Shader;
+        }
+        //metalblood uses custom skin shader, possibly other mods
+        return shader;
     }
 }
