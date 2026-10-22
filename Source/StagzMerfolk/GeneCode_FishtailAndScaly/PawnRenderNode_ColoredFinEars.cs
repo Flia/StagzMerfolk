@@ -8,7 +8,6 @@ namespace StagzMerfolk;
 public class PawnRenderNode_ColoredFinEars(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree)
     : PawnRenderNode_AttachmentHead(pawn, props, tree)
 {
-    private new PawnRenderNodeProperties_HasDesiccatedGraphics Props => props as PawnRenderNodeProperties_HasDesiccatedGraphics;
     public override Graphic GraphicFor(Pawn pawn)
     {
         Shader shader = pawn.story.SkinColorOverriden
@@ -34,10 +33,6 @@ public class PawnRenderNode_ColoredFinEars(Pawn pawn, PawnRenderNodeProperties p
                     ColorFor(pawn)
                 );
             case RotDrawMode.Dessicated:
-                return GraphicDatabase.Get<Graphic_Multi>(
-                    Props.desiccatedTexPath,
-                    ShaderFor(pawn)
-                );
             default:
                 return base.GraphicFor(pawn);
         }
