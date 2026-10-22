@@ -29,17 +29,22 @@
         </exclusionTags>
         <fur>Stagz_TailFur</fur>
         <renderNodeProperties>
-            <li Class="StagzMerfolk.PawnRenderNodeProperties_HasDesiccatedGraphics">
+            <li>
                 <debugLabel>Stagz_Fishtail</debugLabel>
-                <useSkinShader>false</useSkinShader>
-                <colorType>Custom</colorType>
                 <color>(0, 126.5, 126.5)</color>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishtail</nodeClass>
                 <workerClass>PawnRenderNodeWorker_Fur</workerClass>
                 <baseLayer>5</baseLayer>
-                <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
-                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Desiccated/fishtail</desiccatedTexPath>
+            </li>
+            <li>
+                <debugLabel>Stagz_Fishtail_Desiccated</debugLabel>
+                <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+                <baseLayer>5</baseLayer>
+                <rotDrawMode>Dessicated</rotDrawMode>
+                <parentTagDef>Body</parentTagDef>
+                <texPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Desiccated/fishtail</texPath>
             </li>
         </renderNodeProperties>
     </GeneDef>

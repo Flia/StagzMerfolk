@@ -8,7 +8,6 @@ namespace StagzMerfolk;
 public class PawnRenderNode_Fishtail(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree)
     : PawnRenderNode(pawn, props, tree)
 {
-    private new PawnRenderNodeProperties_HasDesiccatedGraphics Props => props as PawnRenderNodeProperties_HasDesiccatedGraphics;
     public override Graphic GraphicFor(Pawn pawn)
     {
         if (pawn.story?.furDef == null)
@@ -41,11 +40,7 @@ public class PawnRenderNode_Fishtail(Pawn pawn, PawnRenderNodeProperties props, 
                     PawnRenderUtility.GetRottenColor(skinColor),
                     ColorFor(pawn)
                     );
-            case RotDrawMode.Dessicated: 
-                return GraphicDatabase.Get<Graphic_Multi>(
-                    Props.desiccatedTexPath,
-                    ShaderFor(pawn)
-                    );
+            case RotDrawMode.Dessicated:
             default:
                 return base.GraphicFor(pawn);
         }

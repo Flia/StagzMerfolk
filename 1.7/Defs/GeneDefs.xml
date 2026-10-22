@@ -107,23 +107,35 @@
         <description>Carriers of this gene have finned ears that are covered in scales.</description>
         <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_EarFin</iconPath>
         <displayOrderInCategory>71</displayOrderInCategory>
-        <renderNodeProperties>
-            <li Class="StagzMerfolk.PawnRenderNodeProperties_HasDesiccatedGraphics">
+        <renderNodeProperties Inherit="False">
+            <li>
                 <debugLabel>Stagz_FinEars</debugLabel>
-                <nodeClass>StagzMerfolk.PawnRenderNode_FinEars</nodeClass>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
                 <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
                 <texPath>StagzMerfolk/Things/Pawn/Humanlike/HeadAttachments/MerfolkEars/ears</texPath>
                 <colorType>Skin</colorType>
                 <parentTagDef>Head</parentTagDef>
                 <useSkinShader>true</useSkinShader>
                 <useRottenColor>true</useRottenColor>
-                <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
                 <drawData>
                     <defaultData>
                         <layer>80</layer>
                     </defaultData>
                 </drawData>
-                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/HeadAttachments/MerfolkEarsDesiccated/ears_desiccated</desiccatedTexPath>
+            </li>
+            <li>
+                <debugLabel>Stagz_FinEars_Desiccated</debugLabel>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPath>StagzMerfolk/Things/Pawn/Humanlike/HeadAttachments/MerfolkEarsDesiccated/ears_desiccated</texPath>
+                <parentTagDef>Head</parentTagDef>
+                <rotDrawMode>Dessicated</rotDrawMode>
+                <drawData>
+                    <defaultData>
+                        <layer>80</layer>
+                    </defaultData>
+                </drawData>
             </li>
         </renderNodeProperties>
         <symbolPack>
@@ -152,7 +164,8 @@
         <!-- TODO: ideally needs its own icon but making one with mask is problematic -->
         <iconPath>StagzMerfolk/UI/Icons/Genes/Gene_EarFin</iconPath>
         <renderNodeProperties Inherit="False">
-            <li Class="StagzMerfolk.PawnRenderNodeProperties_HasDesiccatedGraphics">
+            <li>
+                <debugLabel>Stagz_ColoredFinEars</debugLabel>
                 <nodeClass>StagzMerfolk.PawnRenderNode_ColoredFinEars</nodeClass>
                 <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
                 <texPath>StagzMerfolk/Things/Pawn/Humanlike/HeadAttachments/MerfolkEars/ears</texPath>
@@ -160,13 +173,25 @@
                 <parentTagDef>Head</parentTagDef>
                 <useSkinShader>true</useSkinShader>
                 <useRottenColor>true</useRottenColor>
-                <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
                 <drawData>
                     <defaultData>
                         <layer>80</layer>
                     </defaultData>
                 </drawData>
-                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/HeadAttachments/MerfolkEarsDesiccated/ears_desiccated</desiccatedTexPath>
+            </li>
+            <li>
+                <debugLabel>Stagz_ColoredFinEars_Desiccated</debugLabel>
+                <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+                <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+                <texPath>StagzMerfolk/Things/Pawn/Humanlike/HeadAttachments/MerfolkEarsDesiccated/ears_desiccated</texPath>
+                <parentTagDef>Head</parentTagDef>
+                <rotDrawMode>Dessicated</rotDrawMode>
+                <drawData>
+                    <defaultData>
+                        <layer>80</layer>
+                    </defaultData>
+                </drawData>
             </li>
         </renderNodeProperties>
     </GeneDef>
@@ -186,16 +211,15 @@
         <biostatCpx>0</biostatCpx>
         <biostatMet>0</biostatMet>
         <renderNodeProperties>
-            <li Class="StagzMerfolk.PawnRenderNodeProperties_HasDesiccatedGraphics">
+            <li>
                 <debugLabel>Stagz_BodyFin</debugLabel>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishfin</nodeClass>
                 <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishfin</workerClass>
                 <texPath>StagzMerfolk/Things/Pawn/Humanlike/BodyAttachments/MerfolkFins/fins</texPath>
-                <colorType>Custom</colorType>
                 <color>(0, 126.5, 126.5)</color>
                 <overrideMeshSize>(1, 1)</overrideMeshSize>
                 <parentTagDef>Body</parentTagDef>
-                <rotDrawMode>Fresh, Rotting, Dessicated</rotDrawMode>
+                <rotDrawMode>Fresh, Rotting</rotDrawMode>
                 <useRottenColor>true</useRottenColor>
                 <drawData>
                     <defaultData>
@@ -206,7 +230,23 @@
                         <layer>-2</layer>
                     </dataNorth>
                 </drawData>
-                <desiccatedTexPath>StagzMerfolk/Things/Pawn/Humanlike/BodyAttachments/MerfolkFins/fins_desiccated</desiccatedTexPath>
+            </li>
+            <li>
+                <debugLabel>Stagz_BodyFin_Desiccated</debugLabel>
+                <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishfin</workerClass>
+                <texPath>StagzMerfolk/Things/Pawn/Humanlike/BodyAttachments/MerfolkFins/fins_desiccated</texPath>
+                <overrideMeshSize>(1, 1)</overrideMeshSize>
+                <parentTagDef>Body</parentTagDef>
+                <rotDrawMode>Dessicated</rotDrawMode>
+                <drawData>
+                    <defaultData>
+                        <layer>90</layer>
+                        <offset>(0, 0, -0.15)</offset>
+                    </defaultData>
+                    <dataNorth>
+                        <layer>-2</layer>
+                    </dataNorth>
+                </drawData>
             </li>
         </renderNodeProperties>
     </GeneDef>
