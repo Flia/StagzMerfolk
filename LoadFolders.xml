@@ -23,5 +23,6 @@
         <li IfModActive="Ludeon.RimWorld.Ideology">1.7/LoadFolders/Ideology</li>
         <li IfModActive="VanillaExpanded.VPlantsEMore,royallyTipsy.PanaquaticZone">1.7/LoadFolders/AquaticZoneMods</li>
         <li IfModActive="gravtide.mod">1.7/LoadFolders/GravTide</li>
+        <li IfModActive="horizons.deepsea">1.7/LoadFolders/DeepSea</li>
     </v1.7>
 </loadFolders>
