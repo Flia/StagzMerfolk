@@ -12,7 +12,9 @@ public static class ModInterop
     /// Importantly, used by Aquatic Need, Raincaller's and RainVeil's conditional stats, and Fishtail's movement boost.
     /// Less importantly, appears in dryad treasure-finding code and Deep Dive's hediff - those may be reconsidered in the future.
     /// </summary>
-    public static bool IsSubmerged(this Pawn pawn) => false;
+    public static bool IsSubmerged(this Pawn pawn) => 
+        pawn?.Spawned != null &&
+        DeepSea.pawnSubmergedDelegate != null && DeepSea.pawnSubmergedDelegate(pawn);
     
     /// <summary>
     /// Hook for underwater mods. Determines whether this world tile should be considered submerged underwater.
@@ -20,7 +22,10 @@ public static class ModInterop
     /// Also used by Aquatic Need when the pawn is in caravan, though in the future I may split caravan conditions from the tile it's on (e.g. so merfolk *inside vehicles* wouldn't replenish Aquatic). 
     /// Currently also includes the tile.WaterCovered check: while it is a vanilla check it's never true unless another mod allows caravans over the ocean.
     /// </summary>
-    public static bool IsSubmerged(this Tile tile) => tile?.WaterCovered == true;
+    public static bool IsSubmerged(this Tile tile) => 
+        tile != null &&
+        (tile.WaterCovered
+        || DeepSea.worldtileSubmergedDelegate != null && DeepSea.worldtileSubmergedDelegate(tile.tile));
     
     /// <summary>
     /// Hook for underwater mods. Determines whether this cell on the local map should be considered submerged underwater.
@@ -28,7 +33,9 @@ public static class ModInterop
     /// </summary>
     /// <param name="cell">Coordinates of the cell.</param>
     /// <param name="map">Map containing the cell.</param>
-    public static bool IsSubmerged(this IntVec3 cell, Map map) => false;
+    public static bool IsSubmerged(this IntVec3 cell, Map map) => 
+        map != null &&
+        (DeepSea.cellSubmergedDelegate != null && DeepSea.cellSubmergedDelegate(map, cell) > 0.34f); //0.34f - corresponds to SwimThreshold const
     
 
     /// <summary>
