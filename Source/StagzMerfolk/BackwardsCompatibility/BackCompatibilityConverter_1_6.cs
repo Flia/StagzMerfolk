@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Xml;
 using RimWorld;
 using Verse;
@@ -62,11 +63,39 @@ public class BackCompatibilityConverter_1_6 : BackCompatibilityConverter
     {
         if (Scribe.mode == LoadSaveMode.LoadingVars && obj is Pawn pawn)
         {
+            //Charm changed verb between versions, for some reason that freaks targeter out so ability has to be re-added
             Ability ability = pawn.abilities?.abilities.FirstOrFallback(x => x.def != null && x.def == StagzDefOf.Stagz_SirenCallCharm);
             if (ability != null)
             {
                 pawn.abilities.RemoveAbility(ability.def);
                 pawn.abilities.GainAbility(StagzDefOf.Stagz_SirenCallCharm);
+            }
+
+            //Handles edgecase where pawn had several fishtail genes at once.
+            //Since 1.7+ they are all one GeneDef this leaves pawn in a funny state with duplicate genes.
+            if (pawn.genes != null)
+            {
+                List<Gene> tails = [];
+                foreach (Gene g in pawn.genes.GenesListForReading)
+                {
+                    if (g is Gene_Fishtail)
+                    {
+                        //Yes, it is required here - unclear why but g.pawn is null otherwise.
+                        //I assume this is because it's run during save loading?
+                        //Feels like applying a piece of tape though
+                        g.pawn = pawn;
+                        
+                        tails.Add(g);
+                    }
+                }
+                if (tails.Count > 1)
+                {
+                    for (int i = tails.Count - 1; i > 0; i--)
+                    {
+                        Gene g = tails[i];
+                        pawn.genes.RemoveGene(g);
+                    }
+                }
             }
         }
     }
