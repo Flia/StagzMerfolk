@@ -14,40 +14,28 @@ public class PawnRenderNode_Fishtail(Pawn pawn, PawnRenderNodeProperties props, 
         {
             return null;
         }
-
-        var skinColor = pawn.story.SkinColor;
+        Shader shader = FigureOutTheShader(pawn);
+        
+        Color skinColor = ColorFor(pawn);
         //if (StagzMerfolkSettings.transparentSkinWithoutFur) {skinColor.a = 0;} - for theoretical bodyreplacer compat
 
-        Shader shader = pawn.story.SkinColorOverriden
-            ? StagzDefOf.ScalyGenes.Shader 
-            : StagzDefOf.ScalyGenesWithSkinShader.Shader;
-        
-        switch (pawn.Drawer.renderer.CurRotDrawMode)
-        {
-            case RotDrawMode.Fresh:
-                return GraphicDatabase.Get<Graphic_Multi>(
-                    pawn.story.furDef.GetFurBodyGraphicPath(pawn),
-                    shader,
-                    Vector2.one,
-                    skinColor,
-                    ColorFor(pawn)
-                    );
-            case RotDrawMode.Rotting:
-                return GraphicDatabase.Get<Graphic_Multi>(
-                    pawn.story?.furDef.GetFurBodyGraphicPath(pawn),
-                    StagzDefOf.ScalyGenes.Shader,
-                    Vector2.one,
-                    PawnRenderUtility.GetRottenColor(skinColor),
-                    ColorFor(pawn)
-                    );
-            case RotDrawMode.Dessicated:
-            default:
-                return base.GraphicFor(pawn);
-        }
+        return pawn.Drawer.renderer.CurRotDrawMode is RotDrawMode.Fresh or RotDrawMode.Rotting 
+            ? GraphicDatabase.Get<Graphic_Multi>(pawn.story.furDef.GetFurBodyGraphicPath(pawn), shader, Vector2.one, skinColor, pawn.GetMerrenScaleColorOrFailsafe()) 
+            : base.GraphicFor(pawn);
     }
 
-    public override Color ColorFor(Pawn pawn)
+    public static Shader FigureOutTheShader(Pawn pawn)
     {
-        return pawn.GetMerrenScaleColorOrFailsafe();
+        Shader shader = ShaderUtility.GetSkinShader(pawn);
+        if (shader == ShaderDatabase.CutoutSkin)
+        {
+            return StagzDefOf.ScalyGenesWithSkinShader.Shader;
+        }
+        if (shader == ShaderDatabase.CutoutSkinColorOverride || shader == ShaderDatabase.Cutout)
+        {
+            return StagzDefOf.ScalyGenes.Shader;
+        }
+        //metalblood uses custom skin shader, possibly other mods
+        return shader;
     }
 }

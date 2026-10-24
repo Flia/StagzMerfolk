@@ -31,17 +31,19 @@
         <renderNodeProperties>
             <li>
                 <debugLabel>Stagz_Fishtail</debugLabel>
-                <color>(0, 126.5, 126.5)</color>
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishtail</nodeClass>
                 <workerClass>PawnRenderNodeWorker_Fur</workerClass>
-                <baseLayer>5</baseLayer>
+                <colorType>Skin</colorType>
+                <useSkinShader>true</useSkinShader>
+                <useRottenColor>true</useRottenColor>
                 <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                <baseLayer>6</baseLayer> <!-- default for fur 5 -->
                 <parentTagDef>Body</parentTagDef>
             </li>
             <li>
                 <debugLabel>Stagz_Fishtail_Desiccated</debugLabel>
                 <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
-                <baseLayer>5</baseLayer>
+                <baseLayer>6</baseLayer>
                 <rotDrawMode>Dessicated</rotDrawMode>
                 <parentTagDef>Body</parentTagDef>
                 <texPath>StagzMerfolk/Things/Pawn/Humanlike/Bodies/Desiccated/fishtail</texPath>

@@ -216,11 +216,11 @@
                 <nodeClass>StagzMerfolk.PawnRenderNode_Fishfin</nodeClass>
                 <workerClass>StagzMerfolk.PawnRenderNodeWorker_Fishfin</workerClass>
                 <texPath>StagzMerfolk/Things/Pawn/Humanlike/BodyAttachments/MerfolkFins/fins</texPath>
-                <color>(0, 126.5, 126.5)</color>
+                <colorType>Skin</colorType>
+                <useSkinShader>true</useSkinShader>
                 <overrideMeshSize>(1, 1)</overrideMeshSize>
                 <parentTagDef>Body</parentTagDef>
                 <rotDrawMode>Fresh, Rotting</rotDrawMode>
-                <useRottenColor>true</useRottenColor>
                 <drawData>
                     <defaultData>
                         <layer>90</layer>

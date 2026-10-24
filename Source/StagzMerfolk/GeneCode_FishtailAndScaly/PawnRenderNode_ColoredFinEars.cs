@@ -10,36 +10,10 @@ public class PawnRenderNode_ColoredFinEars(Pawn pawn, PawnRenderNodeProperties p
 {
     public override Graphic GraphicFor(Pawn pawn)
     {
-        Shader shader = pawn.story.SkinColorOverriden
-            ? StagzDefOf.ScalyGenes.Shader 
-            : StagzDefOf.ScalyGenesWithSkinShader.Shader;
-        
-        switch (pawn.Drawer.renderer.CurRotDrawMode)
-        {
-            case RotDrawMode.Fresh:
-                return GraphicDatabase.Get<Graphic_Multi>(
-                    Props.texPath,
-                    shader,
-                    Vector2.one,
-                    pawn.story?.SkinColor ?? Color.white,
-                    ColorFor(pawn)
-                );
-            case RotDrawMode.Rotting:
-                return GraphicDatabase.Get<Graphic_Multi>(
-                    Props.texPath,
-                    shader,
-                    Vector2.one,
-                    PawnRenderUtility.GetRottenColor(pawn.story?.SkinColor ?? Color.white),
-                    ColorFor(pawn)
-                );
-            case RotDrawMode.Dessicated:
-            default:
-                return base.GraphicFor(pawn);
-        }
-    }
+        Shader shader = PawnRenderNode_Fishtail.FigureOutTheShader(pawn);
 
-    public override Color ColorFor(Pawn pawn)
-    {
-        return pawn.GetMerrenScaleColorOrFailsafe();
+        return pawn.Drawer.renderer.CurRotDrawMode is RotDrawMode.Fresh or RotDrawMode.Rotting
+            ? GraphicDatabase.Get<Graphic_Multi>(Props.texPath, shader, Vector2.one, ColorFor(pawn), pawn.GetMerrenScaleColorOrFailsafe())
+            : base.GraphicFor(pawn);
     }
 }
