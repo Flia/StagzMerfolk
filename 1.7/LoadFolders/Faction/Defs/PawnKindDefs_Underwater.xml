@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- todo: techhediffs budget might be a problem -->
+    <!-- pollution and environment as well, for now just turned off -->
+    <!-- melee roles weigh toward coastal, ranged/chief toward abyssal -->
+    <!-- some tribal stuff should frankly fit - tribal dress, veils -->
+    
+    <PawnKindDef Name="Stagz_MerrenFactionPawnkindBase" Abstract="True">
+        <race>Human</race>
+        <defaultFactionDef>Stagz_MerrenCivil</defaultFactionDef>
+        <maxGenerationAge>60</maxGenerationAge>
+        <chemicalAddictionChance>0.05</chemicalAddictionChance>
+        <invNutrition>2.55</invNutrition>
+        <apparelTags>
+            <li>Stagz_MerrenClothing</li>
+        </apparelTags>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <apparelIgnorePollution>true</apparelIgnorePollution>
+        <invFoodDef>Pemmican</invFoodDef> <!-- todo: algae idea strikes again -->
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="Stagz_MerrenFactionPawnkindBase">
+        <defName>Stagz_MerrenPenitent</defName>
+        <label>penitent</label>
+        <combatPower>40</combatPower>
+        <chemicalAddictionChance>0.10</chemicalAddictionChance>
+        <invNutrition>0</invNutrition>
+        <itemQuality>Poor</itemQuality>
+        <gearHealthRange>0.2~1.1</gearHealthRange>
+        <apparelMoney>0</apparelMoney> <!-- spawn naked -->
+        <apparelRequired>
+            <li>Apparel_BowlerHat</li>
+        </apparelRequired>
+        <weaponMoney>200~300</weaponMoney>
+        <weaponTags>
+            <li>Stagz_MeleeBasic</li>
+        </weaponTags>
+        <techHediffsMoney>50~50</techHediffsMoney>
+        <techHediffsTags>
+            <li>Poor</li>
+        </techHediffsTags>
+        <techHediffsChance>0.15</techHediffsChance>
+        <initialWillRange>0~1</initialWillRange>
+        <initialResistanceRange>10~17</initialResistanceRange>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="Stagz_MerrenFactionPawnkindBase">
+        <defName>Stagz_MerrenWarrior</defName>
+        <label>warrior</label>
+        <xenotypeSet>
+            <xenotypeChances Inherit="False">
+                <Stagz_Merfolk_Coastal>0.90</Stagz_Merfolk_Coastal>
+                <Stagz_Merfolk_Abyssal>0.10</Stagz_Merfolk_Abyssal>
+            </xenotypeChances>
+        </xenotypeSet>
+        <combatPower>50</combatPower>
+        <itemQuality>Poor</itemQuality>
+        <canBeSapper>true</canBeSapper>
+        <gearHealthRange>0.5~1.8</gearHealthRange>
+        <apparelMoney>1000</apparelMoney>
+        <apparelRequired>
+            <li>Apparel_SimpleHelmet</li>
+            <li>Apparel_FlakVest</li>
+        </apparelRequired>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <weaponMoney>500</weaponMoney>
+        <weaponTags>
+            <li>Stagz_MeleeDecent</li>
+        </weaponTags>
+        <initialWillRange>1~3</initialWillRange>
+        <initialResistanceRange>5~9</initialResistanceRange>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="Stagz_MerrenFactionPawnkindBase">        
+        <defName>Stagz_MerrenTrader</defName>
+        <label>trader</label>
+        <trader>true</trader>
+        <xenotypeSet>
+            <xenotypeChances Inherit="False">
+                <Stagz_Merfolk_Coastal>0.30</Stagz_Merfolk_Coastal>
+                <Stagz_Merfolk_Abyssal>0.70</Stagz_Merfolk_Abyssal>
+            </xenotypeChances>
+        </xenotypeSet>
+        <combatPower>60</combatPower>
+        <gearHealthRange>0.5~1.8</gearHealthRange>
+        <apparelMoney>1000</apparelMoney>
+        <apparelRequired>
+            <li>Apparel_TribalHeaddress</li>
+            <li>Apparel_BasicShirt</li>
+        </apparelRequired>
+        <weaponMoney>2000</weaponMoney>
+        <weaponTags>
+            <li>Stagz_Staff</li>
+        </weaponTags>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <initialWillRange>2~4</initialWillRange>
+        <initialResistanceRange>9~15</initialResistanceRange>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="Stagz_MerrenFactionPawnkindBase">
+        <defName>Stagz_MerrenHunter</defName>
+        <label>hunter</label>
+        <xenotypeSet>
+            <xenotypeChances Inherit="False">
+                <Stagz_Merfolk_Coastal>0.30</Stagz_Merfolk_Coastal>
+                <Stagz_Merfolk_Abyssal>0.70</Stagz_Merfolk_Abyssal>
+            </xenotypeChances>
+        </xenotypeSet>
+        <combatPower>60</combatPower>
+        <backstoryFilters>
+            <li>
+                <categories>
+                    <li>TribalHunter</li>
+                </categories>
+                <commonality>5</commonality>
+            </li>
+        </backstoryFilters>
+        <gearHealthRange>0.5~1.8</gearHealthRange>
+        <apparelMoney>1000</apparelMoney>
+        <apparelRequired>
+            <li>Apparel_SimpleHelmet</li>
+            <li>Apparel_FlakVest</li>
+        </apparelRequired>
+        <weaponMoney>200~400</weaponMoney>
+        <weaponTags>
+            <li>Stagz_Ranged</li>
+        </weaponTags>
+        <disallowedTraits>
+            <li>Brawler</li>
+        </disallowedTraits>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <initialWillRange>2~4</initialWillRange>
+        <initialResistanceRange>10~16</initialResistanceRange>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="Stagz_MerrenFactionPawnkindBase" Name="Stagz_MerrenChiefBase" Abstract="True">
+        <combatPower>85</combatPower>
+        <minGenerationAge>30</minGenerationAge>
+        <maxGenerationAge>999</maxGenerationAge>
+        <itemQuality>Normal</itemQuality>
+        <factionLeader>true</factionLeader>
+        <canBeSapper>true</canBeSapper>
+        <apparelMoney>1000</apparelMoney>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <weaponMoney>1000~2000</weaponMoney>
+        <initialWillRange>3~5</initialWillRange>
+        <initialResistanceRange>19~30</initialResistanceRange>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="Stagz_MerrenChiefBase">
+        <defName>Stagz_MerrenChiefMelee</defName>
+        <label>berserker chief</label>
+        <weaponTags>
+            <li>Spear</li>
+        </weaponTags>
+        <apparelRequired>
+            <li>Apparel_SimpleHelmet</li>
+            <li>Apparel_PlateArmor</li>
+        </apparelRequired>
+        <initialResistanceRange>38~58</initialResistanceRange>
+    </PawnKindDef>
+
+    <PawnKindDef ParentName="Stagz_MerrenChiefBase">
+        <defName>Stagz_MerrenChiefRanged</defName>
+        <label>archer chief</label>
+        <weaponTags>
+            <li>Stagz_Ranged</li>
+        </weaponTags>
+        <apparelRequired>
+            <li>Apparel_TribalHeaddress</li>
+            <li>Apparel_PlateArmor</li>
+        </apparelRequired>
+        <disallowedTraits>
+            <li>Brawler</li>
+        </disallowedTraits>
+        <initialResistanceRange>16~26</initialResistanceRange>
+    </PawnKindDef>
+
+</Defs>

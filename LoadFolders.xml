@@ -27,5 +27,6 @@
         <li IfModActive="ReGrowth.BOTR.Core">1.7/LoadFolders/Regrowth</li>
         <li IfModActive="VanillaExpanded.VanillaTraitsExpanded">1.7/LoadFolders/VanillaTraitsExpanded</li>
         <li IfModActive="VanillaExpanded.VCEF">1.7/LoadFolders/VanillaFishingExpanded</li>
+        <li IfModActive="horizons.deepsea">1.7/LoadFolders/Faction</li>
     </v1.7>
 </loadFolders>

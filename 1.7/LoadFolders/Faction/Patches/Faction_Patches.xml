@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- All of those are chosen for the fact they are present in Nautian -->
+    
+    <!-- Weapon tags -->
+    
+    <!--There's also the spear, but it has its own unique tag in game already -->
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="MeleeWeapon_Club" or defName="MeleeWeapon_Knife"]/weaponTags</xpath>
+        <value>
+            <li>Stagz_MeleeBasic</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="MeleeWeapon_Gladius" or defName="MeleeWeapon_Mace"]/weaponTags</xpath>
+        <value>
+            <li>Stagz_MeleeDecent</li>
+        </value>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Pila" or defName="Bow_Recurve"]/weaponTags</xpath>
+        <value>
+            <li>Stagz_Ranged</li>
+        </value>
+    </Operation>
+    <!-- todo: check for DLC padlock -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="MeleeWeapon_PsyfocusStaff"]/weaponTags</xpath>
+        <value>
+            <li>Stagz_Staff</li>
+        </value>
+    </Operation>
+    
+    <!-- Apparel -->
+    
+    <!-- Apparel_TribalHeaddress is left for chieftans and shamans, and used in required apparel directly -->
+    <!-- Apparel_SimpleHelmet and Apparel_FlakVest is the only armor in the mod, and will be used directly -->
+    
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_BowlerHat"]/apparel/tags</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_BowlerHat"]/apparel</xpath>
+            <value>
+                <tags />
+            </value>
+        </nomatch>
+    </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_Duster"]/apparel/tags</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_Duster"]/apparel</xpath>
+            <value>
+                <tags />
+            </value>
+        </nomatch>
+    </Operation>
+    <Operation Class="PatchOperationConditional">
+        <xpath>Defs/ThingDef[defName="Apparel_Jacket"]/apparel/tags</xpath>
+        <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Apparel_Jacket"]/apparel</xpath>
+            <value>
+                <tags />
+            </value>
+        </nomatch>
+    </Operation>
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="Apparel_BowlerHat" or
+            defName="Apparel_Duster" or
+            defName="Apparel_Jacket"]/apparel/tags</xpath>
+        <value>
+            <li>Stagz_MerrenClothing</li>
+        </value>
+    </Operation>
+</Patch>
