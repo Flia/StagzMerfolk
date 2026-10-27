@@ -24,5 +24,6 @@
         <li IfModActive="VanillaExpanded.VPlantsEMore,royallyTipsy.PanaquaticZone">1.7/LoadFolders/AquaticZoneMods</li>
         <li IfModActive="gravtide.mod">1.7/LoadFolders/GravTide</li>
         <li IfModActive="horizons.deepsea">1.7/LoadFolders/DeepSea</li>
+        <li IfModActive="horizons.deepsea">1.7/LoadFolders/Faction</li>
     </v1.7>
 </loadFolders>
