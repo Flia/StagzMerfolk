@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using RimWorld;
 using Verse;
@@ -61,7 +62,7 @@ public class BackCompatibilityConverter_1_6 : BackCompatibilityConverter
 
     public override void PostExposeData(object obj)
     {
-        if (Scribe.mode == LoadSaveMode.LoadingVars && obj is Pawn pawn)
+        if (Scribe.mode == LoadSaveMode.PostLoadInit && obj is Pawn pawn)
         {
             //Charm changed verb between versions, for some reason that freaks targeter out so ability has to be re-added
             Ability ability = pawn.abilities?.abilities.FirstOrFallback(x => x.def != null && x.def == StagzDefOf.Stagz_SirenCallCharm);
@@ -75,19 +76,7 @@ public class BackCompatibilityConverter_1_6 : BackCompatibilityConverter
             //Since 1.7+ they are all one GeneDef this leaves pawn in a funny state with duplicate genes.
             if (pawn.genes != null)
             {
-                List<Gene> tails = [];
-                foreach (Gene g in pawn.genes.GenesListForReading)
-                {
-                    if (g is Gene_Fishtail)
-                    {
-                        //Yes, it is required here - unclear why but g.pawn is null otherwise.
-                        //I assume this is because it's run during save loading?
-                        //Feels like applying a piece of tape though
-                        g.pawn = pawn;
-                        
-                        tails.Add(g);
-                    }
-                }
+                List<Gene> tails = [.. pawn.genes.GenesListForReading.Where(g => g is Gene_Fishtail)];
                 if (tails.Count > 1)
                 {
                     for (int i = tails.Count - 1; i > 0; i--)
