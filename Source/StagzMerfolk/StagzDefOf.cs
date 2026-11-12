@@ -15,6 +15,7 @@ public class StagzDefOf
     public static GeneDef Stagz_Fishtail;
 
     public static MeditationFocusDef Stagz_Water;
+    [MayRequireRoyalty] public static ThingDef Stagz_WaterMeditationSpot;
 
     public static HediffDef Stagz_Dehydration;
     public static NeedDef Stagz_NeedAquatic;

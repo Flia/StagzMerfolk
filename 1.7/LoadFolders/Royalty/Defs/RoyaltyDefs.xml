@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>Stagz_WaterMeditationSpot</defName>
+        <label>water meditation spot</label>
+        <description>Designates a spot for meditation. Psycasters can meditate here to gain psyfocus. If a focus object like a sculpture is nearby, the psycaster will be able to focus on it to boost their psyfocus gain. However, different people are able to use different focus objects.</description>
+        <graphicData>
+            <texPath>StagzMerfolk/UI/Icons/Psyfocus/PsyfocusWater</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <altitudeLayer>FloorEmplacement</altitudeLayer>
+        <statBases>
+            <MeditationFocusStrength>0.0</MeditationFocusStrength>
+            <WorkToBuild>0</WorkToBuild>
+        </statBases>
+        <rotatable>false</rotatable>
+        <scatterableOnMapGen>false</scatterableOnMapGen>
+        <useHitPoints>False</useHitPoints>
+        <designationCategory>Misc</designationCategory>
+        <uiOrder>2000</uiOrder>
+        <passability>Standable</passability>
+        <terrainAffordanceNeeded>Walkable</terrainAffordanceNeeded>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <building>
+            <sowTag>SupportPlantsOnly</sowTag>
+            <canPlaceOverImpassablePlant>false</canPlaceOverImpassablePlant>
+            <ai_chillDestination>false</ai_chillDestination>
+            <wakeDormantPawnsOnConstruction>false</wakeDormantPawnsOnConstruction>
+            <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+        </building>
+        <placeWorkers>
+            <li>StagzMerfolk.PlaceWorker_WaterMeditationOffset</li>
+        </placeWorkers>
+        <comps>
+            <li Class="CompProperties_UsesMeditationFocus"/>
+            <li Class="CompProperties_AssignableToPawn">
+                <drawUnownedAssignmentOverlay>false</drawUnownedAssignmentOverlay>
+                <compClass>CompAssignableToPawn_MeditationSpot</compClass>
+            </li>
+            <!--
+            <li Class="CompProperties_AssignableToPawn">
+                <drawAssignmentOverlay>true</drawAssignmentOverlay>
+                <compClass>CompAssignableToPawn_Throne</compClass>
+                <noAssignablePawnsDesc>Throne ownership requires a person with a royal title.</noAssignablePawnsDesc>
+            </li>
+            -->
+            <li>
+                <compClass>StagzMerfolk.CompDrawWaterFocus</compClass>
+            </li>
+            <li Class="CompProperties_MeditationFocus">
+                <statDef>MeditationFocusStrength</statDef>
+                <focusTypes>
+                    <li>Stagz_Water</li>
+                </focusTypes>
+                <offsets>
+                    <li Class="StagzMerfolk.FocusStrengthOffset_WaterCells" />
+                    <li Class="StagzMerfolk.FocusStrengthOffset_Underwater" />
+                </offsets>
+            </li>
+        </comps>
+    </ThingDef>
+</Defs>
